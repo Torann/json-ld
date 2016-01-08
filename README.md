@@ -1,5 +1,7 @@
 # JSON-LD Generator
 
+[![Latest Stable Version](https://poser.pugx.org/torann/json-ld/v/stable.png)](https://packagist.org/packages/torann/json-ld) [![Total Downloads](https://poser.pugx.org/torann/json-ld/downloads.png)](https://packagist.org/packages/torann/json-ld) [![Build Status](https://travis-ci.org/Torann/json-ld.svg)](https://travis-ci.org/Torann/json-ld)
+
 Extremely simple JSON-LD generator.
 
 ## Installation
