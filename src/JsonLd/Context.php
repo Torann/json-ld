@@ -84,6 +84,9 @@ class Context
             case 'business':
                 return new ContextTypes\LocalBusiness($data);
                 break;
+            case 'breadcrumbs':
+                return new ContextTypes\BreadcrumbList($data);
+                break;
             case 'review':
                 return new ContextTypes\Review($data);
                 break;
@@ -104,6 +107,9 @@ class Context
                 break;
             case 'blog_posting':
                 return new ContextTypes\BlogPosting($data);
+                break;
+            case 'search_box':
+                return new ContextTypes\SearchBox($data);
                 break;
             default:
                 throw new InvalidArgumentException(sprintf('Undefined context type: "%s"', $name));

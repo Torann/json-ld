@@ -36,6 +36,8 @@ $ composer require torann/json-ld
  - article
  - news_article
  - blog_posting
+ - breadcrumbs
+ - search_box
 
 ## Examples
 

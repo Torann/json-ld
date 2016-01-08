@@ -54,9 +54,19 @@ abstract class AbstractContext implements ContextTypeInterface
     }
 
     /**
+     * After fill event.
+     *
+     * @param array $attributes
+     */
+    public function afterFill($attributes)
+    {
+        //
+    }
+
+    /**
      * Creates an array of schema.org attribute from attributes.
      *
-     * @param array  $attributes
+     * @param array $attributes
      */
     public function fill($attributes)
     {
@@ -76,6 +86,9 @@ abstract class AbstractContext implements ContextTypeInterface
         foreach ($properties as $key => $property) {
             $this->setProperty($key, $property, $this->getArrValue($attributes, $key, ''));
         }
+
+        // After fill event
+        $this->afterFill($attributes);
     }
 
     /**
@@ -146,6 +159,17 @@ abstract class AbstractContext implements ContextTypeInterface
     }
 
     /**
+     * Set context type.
+     *
+     * @param  string $type
+     * @return array
+     */
+    protected function setType($type)
+    {
+        $this->properties['@type'] = $type;
+    }
+
+    /**
      * Get nested context array.
      *
      * @param  string $class
@@ -185,7 +209,7 @@ abstract class AbstractContext implements ContextTypeInterface
      */
     protected function hasGetMutator($key)
     {
-        return method_exists($this, 'set' . ucfirst($key) . 'Attribute');
+        return method_exists($this, 'set' . $this->getMutatorName($key) . 'Attribute');
     }
 
     /**
@@ -197,7 +221,20 @@ abstract class AbstractContext implements ContextTypeInterface
      */
     protected function mutateAttribute($key, $args)
     {
-        return $this->{'set' . ucfirst($key) . 'Attribute'}($args);
+        return $this->{'set' . $this->getMutatorName($key) . 'Attribute'}($args);
+    }
+
+    /**
+     * Get mutator name from string.
+     *
+     * @param  string $value
+     * @return string
+     */
+    protected function getMutatorName($value)
+    {
+        $value = ucwords(str_replace(['-', '_'], ' ', $value));
+
+        return lcfirst(str_replace(' ', '', $value));
     }
 
     /**
