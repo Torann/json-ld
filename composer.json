@@ -1,0 +1,34 @@
+{
+  "name": "torann/json-ld",
+  "description": "Extremely simple JSON-LD markup generator.",
+  "keywords": ["json-ld", "generator", "schema", "structured-data"],
+  "license": "BSD 2-Clause",
+  "authors": [
+    {
+      "name": "Daniel Stainback",
+      "email": "daniel@lyften.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "mockery/mockery": "^0.9.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "JsonLd\\": "src/JsonLd"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JsonLd\\Test\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1-dev"
+    }
+  }
+}
