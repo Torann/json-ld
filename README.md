@@ -160,5 +160,13 @@ echo $business->present()->jsonLd();
 
 ## Change Log
 
+
+ **v0.0.2**
+ 
+ - Add breadcrumbs
+ - Add search box
+ - Add a few docs
+ 
  **v0.0.1**
+ 
  - First release
