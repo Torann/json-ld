@@ -12,6 +12,7 @@ class Event extends AbstractContext
     protected $structure = [
         'name' => null,
         'startDate' => null,
+        'endDate' => null,
         'url' => null,
         'offers' => [],
         'location' => Place::class,
