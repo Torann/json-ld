@@ -160,6 +160,13 @@ echo $business->present()->jsonLd();
 
 ## Change Log
 
+ **v0.0.3**
+
+ - Add product
+ - Add order
+ - Add price specification
+ - Add invoice
+ - Add context
 
  **v0.0.2**
  
