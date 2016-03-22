@@ -96,6 +96,21 @@ class Context
             case 'person':
                 return new ContextTypes\Person($data);
                 break;
+            case 'offer':
+                return new ContextTypes\Offer($data);
+                break;
+            case 'order':
+                return new ContextTypes\Order($data);
+                break;
+            case 'product':
+                return new ContextTypes\Product($data);
+                break;
+            case 'price_specification':
+                return new ContextTypes\PriceSpecification($data);
+                break;
+            case 'invoice':
+                return new ContextTypes\Invoice($data);
+                break;
             case 'organization':
                 return new ContextTypes\Organization($data);
                 break;
