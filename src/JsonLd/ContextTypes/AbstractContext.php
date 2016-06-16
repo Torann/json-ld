@@ -196,9 +196,22 @@ abstract class AbstractContext implements ContextTypeInterface
      */
     protected function filterNestedContext(array $properties = [])
     {
-        return array_filter($properties, function($value, $key) {
+        $func = function($value, $key) {
             return ($value && $key !== '@context');
-        }, ARRAY_FILTER_USE_BOTH);
+        };
+
+        if (!defined('ARRAY_FILTER_USE_BOTH')) {
+            $return = [];
+            foreach ($properties as $k => $v) {
+                if (call_user_func($func, $v, $k)) {
+                    $return[$k] = $v;
+                }
+            }
+
+            return $return;
+        }
+
+        return array_filter($properties, $func, ARRAY_FILTER_USE_BOTH);
     }
 
     /**
