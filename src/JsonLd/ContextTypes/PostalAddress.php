@@ -13,6 +13,7 @@ class PostalAddress extends AbstractContext
         'streetAddress' => '',
         'addressLocality' => '',
         'addressRegion' => '',
+        'addressCountry' => '',
         'postalCode' => '',
     ];
 }

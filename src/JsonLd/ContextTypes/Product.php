@@ -9,6 +9,8 @@ class Product extends AbstractContext
      */
     protected $structure = [
         'name' => null,
+        'description' => null,
+        'brand' => null,
         'image' => null,
         'sku' => null,
         'url' => null,
