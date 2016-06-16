@@ -13,8 +13,20 @@ class LocalBusiness extends AbstractContext
         'name' => null,
         'description' => null,
         'telephone' => null,
+        'email' => null,
         'openingHours' => null,
         'address' => PostalAddress::class,
         'geo' => GeoCoordinates::class,
     ];
+
+    /**
+     * Set the opening hours of the business.
+     *
+     * @param  array $items
+     * @return array
+     */
+    protected function setOpeningHoursAttribute($items)
+    {
+        return $items;
+    }
 }
