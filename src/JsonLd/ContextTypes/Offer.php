@@ -10,6 +10,11 @@ class Offer extends AbstractContext
     protected $structure = [
         'itemOffered' => Product::class,
         'price' => null,
-        'priceCurrency' => null
+        'priceCurrency' => null,
+        'priceValidUntil' => null,
+        'url' => null,
+        'itemOffered' => null,
+        'itemCondition' => null,
+        'availability' => null
     ];
 }
