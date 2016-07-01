@@ -11,7 +11,10 @@ class Offer extends AbstractContext
         'itemOffered' => Product::class,
         'price' => null,
         'priceCurrency' => null,
-        'availability' => null,
+        'priceValidUntil' => null,
+        'url' => null,
+        'itemOffered' => null,
         'itemCondition' => null,
+        'availability' => null
     ];
 }
