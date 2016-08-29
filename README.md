@@ -38,6 +38,10 @@ $ composer require torann/json-ld
  - blog_posting
  - breadcrumbs
  - search_box
+ - Music Group
+ - Music Album
+ - Music Recording
+ - Music Playlist
 
 ## Examples
 
