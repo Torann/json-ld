@@ -17,6 +17,8 @@ class LocalBusiness extends AbstractContext
         'openingHours' => null,
         'address' => PostalAddress::class,
         'geo' => GeoCoordinates::class,
+        'review' => Review::class,
+        'aggregateRating' => AggregateRating::class,
     ];
 
     /**
