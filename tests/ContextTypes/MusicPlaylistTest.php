@@ -51,15 +51,15 @@ class MusicPlaylistTest extends TestCase
         $this->assertEquals([
             [
                 '@type' => 'MusicRecording',
+                '@id' => 'https://google.com/1-musicrecording',
                 'name' => 'magni dolores eo',
-                'url' => 'https://google.com/1-musicrecording',
                 'duration' => 'PT1M33S', // 1 minute 33 seconds
                 'genre' => 'Ambient, Classical, Folk',
             ],
             [
                 '@type' => 'MusicRecording',
+                '@id' => 'https://google.com/2-musicrecording',
                 'name' => 'totam rem aperiam',
-                'url' => 'https://google.com/2-musicrecording',
                 'duration' => 'PT3M33S', // 3 minute 33 seconds
                 'genre' => 'Classical',
             ],

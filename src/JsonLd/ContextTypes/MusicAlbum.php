@@ -12,8 +12,8 @@ class MusicAlbum extends MusicAbstractContext
      */
     protected $structure = [
         '@id' => null,
-        'name' => null,
         'url' => null,
+        'name' => null,
         'description' => null,
         'numTracks' => null,
         'byArtist' => null,

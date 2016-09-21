@@ -12,8 +12,8 @@ class MusicRecording extends MusicAbstractContext
      */
     protected $structure = [
         '@id' => null,
-        'name' => null,
         'url' => null,
+        'name' => null,
         'duration' => null,
         'genre' => null,
         'description' => null,

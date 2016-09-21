@@ -55,7 +55,7 @@ class MusicGroupTest extends TestCase
             [
                 '@type' => 'MusicRecording',
                 'name' => 'magni dolores eo',
-                'url' => 'https://google.com/1-musicrecording',
+                '@id' => 'https://google.com/1-musicrecording',
                 'duration' => 'PT1M33S', // 1 minute 33 seconds
                 'genre' => 'Ambient, Classical, Folk',
             ]

@@ -17,22 +17,22 @@ class MusicAlbumTest extends TestCase
         'track' => [
             [
                 '@type' => 'MusicRecording',
-                'name' => 'magni dolores eo',
                 'url' => 'https://google.com/1-musicrecording',
+                'name' => 'magni dolores eo',
                 'duration' => 'PT1M33S', // 1 minute 33 seconds
                 'genre' => ['Ambient', 'Classical', 'Folk'],
             ],
             [
                 '@type' => 'MusicRecording',
-                'name' => 'totam rem aperiam',
                 'url' => 'https://google.com/2-musicrecording',
+                'name' => 'totam rem aperiam',
                 'duration' => 'PT3M33S', // 3 minute 33 seconds
                 'genre' => 'Classical',
             ]
         ],
         'byArtist' => [
-            'name' => 'exercitation ullamco laboris nisi ut',
             'url' => 'https://google.com/1-musicgroup',
+            'name' => 'exercitation ullamco laboris nisi ut',
             'description' => 'Lorem ipsum dolor sit amet',
         ],
     ];
@@ -67,15 +67,15 @@ class MusicAlbumTest extends TestCase
         $this->assertEquals([
             [
                 '@type' => 'MusicRecording',
+                '@id' => 'https://google.com/1-musicrecording',
                 'name' => 'magni dolores eo',
-                'url' => 'https://google.com/1-musicrecording',
                 'duration' => 'PT1M33S', // 1 minute 33 seconds
                 'genre' => 'Ambient, Classical, Folk',
             ],
             [
                 '@type' => 'MusicRecording',
+                '@id' => 'https://google.com/2-musicrecording',
                 'name' => 'totam rem aperiam',
-                'url' => 'https://google.com/2-musicrecording',
                 'duration' => 'PT3M33S', // 3 minute 33 seconds
                 'genre' => 'Classical',
             ],
@@ -91,8 +91,8 @@ class MusicAlbumTest extends TestCase
 
         $this->assertEquals([
             '@type' => 'MusicGroup',
+            '@id' => 'https://google.com/1-musicgroup',
             'name' => 'exercitation ullamco laboris nisi ut',
-            'url' => 'https://google.com/1-musicgroup',
             'description' => 'Lorem ipsum dolor sit amet',
         ], $context->getProperty('byArtist'));
     }
