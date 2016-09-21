@@ -38,10 +38,10 @@ $ composer require torann/json-ld
  - blog_posting
  - breadcrumbs
  - search_box
- - Music Group
- - Music Album
- - Music Recording
- - Music Playlist
+ - music_group
+ - music_album
+ - music_recording
+ - music_playlist
 
 ## Examples
 
@@ -110,14 +110,14 @@ Even though this example shows using the JSON-LD inside of a `Laracasts\Presente
 #### /App/Presenters/BusinessPresenter.php
 
 ```php
-<?php 
+<?php
 
 namespace App\Presenters;
 
 use JsonLd\Context;
 use Laracasts\Presenter\Presenter;
 
-class BusinessPresenter extends Presenter 
+class BusinessPresenter extends Presenter
 {
     /**
      * Create JSON-LD object.
@@ -173,11 +173,11 @@ echo $business->present()->jsonLd();
  - Add context
 
  **v0.0.2**
- 
+
  - Add breadcrumbs
  - Add search box
  - Add a few docs
- 
+
 **v0.0.1**
- 
+
  - First release
