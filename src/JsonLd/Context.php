@@ -138,6 +138,9 @@ class Context
             case 'music_playlist':
                 return new ContextTypes\MusicPlaylist($data);
                 break;
+            case 'corporation':
+                return new ContextTypes\Corporation($data);
+                break;
             default:
                 throw new InvalidArgumentException(sprintf('Undefined context type: "%s"', $name));
         }
