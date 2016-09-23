@@ -32,11 +32,18 @@ abstract class AbstractContext implements ContextTypeInterface
     ];
 
     /**
-     * Property structure, will be merged up for objects extending Thing
+     * Property structure
      *
      * @var array
      */
     protected $extendStructure = [];
+
+    /**
+     * Property structure, will be merged up for objects extending Thing
+     *
+     * @var array
+     */
+    private $extendedStructure = [];
 
     /**
      * Create a new context type instance

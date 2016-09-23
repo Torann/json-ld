@@ -9,20 +9,20 @@ class Organization extends Thing
      *
      * @var array
      */
-    protected $extendStructure = [
+    private $extendedStructure = [
         'address' => PostalAddress::class,
         'logo' => ImageObject::class,
     ];
 
     /**
-     * Organization constructor. Merges extendStructure up
+     * Organization constructor. Merges extendedStructure up
      *
      * @param array $attributes
-     * @param array $extendStructure
+     * @param array $extendedStructure
      */
-    public function __construct(array $attributes, array $extendStructure = [])
+    public function __construct(array $attributes, array $extendedStructure = [])
     {
-        parent::__construct($attributes, array_merge($this->structure, $this->extendStructure, $extendStructure));
+        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
     }
 
 }

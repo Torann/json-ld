@@ -9,19 +9,19 @@ class Corporation extends Organization
      *
      * @var array
      */
-    protected $extendStructure = [
+    private $extendedStructure = [
         'tickerSymbol' => null,
     ];
 
     /**
-     * Corporation constructor. Merges extendStructure up
+     * Corporation constructor. Merges extendedStructure up
      *
      * @param array $attributes
-     * @param array $extendStructure
+     * @param array $extendedStructure
      */
-    public function __construct(array $attributes, array $extendStructure = [])
+    public function __construct(array $attributes, array $extendedStructure = [])
     {
-        parent::__construct($attributes, array_merge($this->structure, $this->extendStructure, $extendStructure));
+        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
     }
 
 }

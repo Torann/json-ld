@@ -14,6 +14,12 @@ class CorporationTest extends TestCase
         'url' => 'https://example.com',
         'description' => 'Lorem ipsum dolor sit amet',
         'tickerSymbol' => 'ACME',
+        'address' => [
+            'streetAddress' => '1785 East Sahara Avenue, Suite 490-423',
+            'addressLocality' => 'Las Vegas',
+            'addressRegion' => 'NV',
+            'postalCode' => '89104',
+        ],
     ];
 
     /**
@@ -24,5 +30,6 @@ class CorporationTest extends TestCase
         $context = $this->make();
 
         $this->assertEquals('https://example.com', $context->getProperty('url'));
+        $this->assertEquals('PostalAddress', $context->getProperty('address')['@type']);
     }
 }
