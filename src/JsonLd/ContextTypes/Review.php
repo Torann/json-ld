@@ -17,6 +17,7 @@ class Review extends AbstractContext
         'author' => Person::class,
         'reviewBody' => null,
         'publisher' => Organization::class,
+        'duration' => Duration::class,
         'datePublished' => null,
     ];
 }

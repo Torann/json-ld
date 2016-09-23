@@ -2,17 +2,19 @@
 
 namespace JsonLd\ContextTypes;
 
-class Place extends AbstractContext
+class MusicPlaylist extends MusicAbstractContext
 {
+
     /**
      * Property structure
      *
      * @var array
      */
     protected $structure = [
+        '@id' => null,
+        'url' => null,
         'name' => null,
-        'address' => PostalAddress::class,
-        'review' => Review::class,
-        'aggregateRating' => AggregateRating::class,
+        'numTracks' => null,
+        'track' => null,
     ];
 }

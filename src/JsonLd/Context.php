@@ -126,6 +126,18 @@ class Context
             case 'search_box':
                 return new ContextTypes\SearchBox($data);
                 break;
+            case 'music_group':
+                return new ContextTypes\MusicGroup($data);
+                break;
+            case 'music_album':
+                return new ContextTypes\MusicAlbum($data);
+                break;
+            case 'music_recording':
+                return new ContextTypes\MusicRecording($data);
+                break;
+            case 'music_playlist':
+                return new ContextTypes\MusicPlaylist($data);
+                break;
             default:
                 throw new InvalidArgumentException(sprintf('Undefined context type: "%s"', $name));
         }
