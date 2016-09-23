@@ -2,7 +2,7 @@
 
 namespace JsonLd\ContextTypes;
 
-class Organization extends Thing
+class Corporation extends Organization
 {
     /**
      * Property structure
@@ -10,12 +10,11 @@ class Organization extends Thing
      * @var array
      */
     protected $extendStructure = [
-        'address' => PostalAddress::class,
-        'logo' => ImageObject::class,
+        'tickerSymbol' => null,
     ];
 
     /**
-     * Organization constructor. Merges extendStructure up
+     * Corporation constructor. Merges extendStructure up
      *
      * @param array $attributes
      * @param array $extendStructure

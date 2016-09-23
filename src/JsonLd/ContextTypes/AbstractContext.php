@@ -32,7 +32,7 @@ abstract class AbstractContext implements ContextTypeInterface
     ];
 
     /**
-     * Property structure
+     * Property structure, will be merged up for objects extending Thing
      *
      * @var array
      */
@@ -162,7 +162,7 @@ abstract class AbstractContext implements ContextTypeInterface
      * Set context type.
      *
      * @param  string $type
-     * @return array
+     * @return void
      */
     protected function setType($type)
     {
