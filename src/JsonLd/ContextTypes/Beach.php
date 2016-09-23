@@ -12,7 +12,9 @@ class Beach extends AbstractContext
     protected $structure = [
         'name' => null,
         'openingHours' => null,
-        'photo' =>null,
+        'description' => null,
+        'image' => null,
+        'url' => null,
         'address' => PostalAddress::class,
         'geo' => GeoCoordinates::class,
         'review' => Review::class,
