@@ -24,6 +24,50 @@ class ContextTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function shouldAllowSameAsToBeArray()
+    {
+        $context = \JsonLd\Context::create('event', [
+            'name' => 'Foo Bar',
+            'sameAs' => [
+                'https://google.com/facebook',
+                'https://google.com/instagram',
+                'https://google.com/linkedin'
+            ],
+        ]);
+
+        $this->assertEquals([
+            '@context' => 'http://schema.org',
+            '@type' => 'Event',
+            'name' => 'Foo Bar',
+            'sameAs' => [
+                'https://google.com/facebook',
+                'https://google.com/instagram',
+                'https://google.com/linkedin'
+            ],
+        ], $context->getProperties());
+    }
+
+    /**
+     * @test
+     */
+    public function shouldAllowSameAsToBeAString()
+    {
+        $context = \JsonLd\Context::create('event', [
+            'name' => 'Foo Bar',
+            'sameAs' => 'https://google.com/facebook',
+        ]);
+
+        $this->assertEquals([
+            '@context' => 'http://schema.org',
+            '@type' => 'Event',
+            'name' => 'Foo Bar',
+            'sameAs' => 'https://google.com/facebook',
+        ], $context->getProperties());
+    }
+
+    /**
+     * @test
+     */
     public function shouldGenerateEventScriptTag()
     {
         $context = \JsonLd\Context::create('event', ['name' => 'Foo Bar']);
