@@ -32,6 +32,7 @@ class Article extends AbstractContext
         'pageStart' => null,
         'pagination' => null,
         'mainEntityOfPage' => WebPage::class,
+        'headline' => null,
     ];
 
     /**

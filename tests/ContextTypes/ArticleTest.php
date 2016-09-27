@@ -45,6 +45,7 @@ class ArticleTest extends TestCase
         'mainEntityOfPage' => [
             'url' => 'https://blogspot.com/100-article'
         ],
+        'headline' => 'eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     ];
 
     /**
@@ -55,6 +56,16 @@ class ArticleTest extends TestCase
         $context = $this->make();
 
         $this->assertEquals('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit...', $context->getProperty('description'));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldHaveHeadline()
+    {
+        $context = $this->make();
+
+        $this->assertEquals('eiusmod tempor incididunt ut labore et dolore magna aliqua.', $context->getProperty('headline'));
     }
 
     /**
