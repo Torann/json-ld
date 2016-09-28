@@ -2,7 +2,7 @@
 
 namespace JsonLd\ContextTypes;
 
-class Place extends AbstractContext
+class Beach extends AbstractContext
 {
     /**
      * Property structure
@@ -11,7 +11,12 @@ class Place extends AbstractContext
      */
     protected $structure = [
         'name' => null,
+        'openingHours' => null,
+        'description' => null,
+        'image' => null,
+        'url' => null,
         'address' => PostalAddress::class,
+        'geo' => GeoCoordinates::class,
         'review' => Review::class,
         'aggregateRating' => AggregateRating::class,
     ];

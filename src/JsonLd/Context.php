@@ -78,6 +78,9 @@ class Context
             case 'place':
                 return new ContextTypes\Place($data);
                 break;
+            case 'beach':
+                return new ContextTypes\Beach($data);
+                break;
             case 'address':
                 return new ContextTypes\PostalAddress($data);
                 break;
