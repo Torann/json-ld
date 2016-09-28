@@ -24,5 +24,8 @@ class VideoObject extends AbstractContext
         'uploadDate' => null,
         'caption' => null,
         'thumbnail' => ImageObject::class,
+        'description' => null,
+        'thumbnailUrl' => null,
+        'name' => null,
     ];
 }

@@ -92,6 +92,17 @@ abstract class AbstractContext implements ContextTypeInterface
     }
 
     /**
+     * Set sameAs Attribute
+     *
+     * @param mixed $value
+     * @return mixed
+     */
+    protected function setSameAsAttribute($value)
+    {
+        return $value;
+    }
+
+    /**
      * Creates context properties.
      *
      * @return array

@@ -138,6 +138,12 @@ class Context
             case 'music_playlist':
                 return new ContextTypes\MusicPlaylist($data);
                 break;
+            case 'contact_point':
+                return new ContextTypes\ContactPoint($data);
+                break;
+            case 'creative_work':
+                return new ContextTypes\CreativeWork($data);
+                break;
             default:
                 throw new InvalidArgumentException(sprintf('Undefined context type: "%s"', $name));
         }
