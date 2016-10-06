@@ -66,7 +66,7 @@ class MusicRecordingTest extends TestCase
 
         $this->assertEquals([
             '@type' => 'MusicGroup',
-            '@id' => 'https://google.com/1-musicgroup',
+            'url' => 'https://google.com/1-musicgroup',
             'name' => 'exercitation ullamco laboris nisi ut',
             'description' => 'aliquam quaerat voluptatem.',
         ], $context->getProperty('byArtist'));
@@ -81,7 +81,7 @@ class MusicRecordingTest extends TestCase
 
         $this->assertEquals([
             '@type' => 'MusicAlbum',
-            '@id' => 'https://google.com/1-musicalbum',
+            'url' => 'https://google.com/1-musicalbum',
             'name' => 'sed quia consequuntur',
             'description' => 'Lorem ipsum dolor sit amet',
         ], $context->getProperty('inAlbum'));
