@@ -67,14 +67,14 @@ class MusicAlbumTest extends TestCase
         $this->assertEquals([
             [
                 '@type' => 'MusicRecording',
-                '@id' => 'https://google.com/1-musicrecording',
+                'url' => 'https://google.com/1-musicrecording',
                 'name' => 'magni dolores eo',
                 'duration' => 'PT1M33S', // 1 minute 33 seconds
                 'genre' => 'Ambient, Classical, Folk',
             ],
             [
                 '@type' => 'MusicRecording',
-                '@id' => 'https://google.com/2-musicrecording',
+                'url' => 'https://google.com/2-musicrecording',
                 'name' => 'totam rem aperiam',
                 'duration' => 'PT3M33S', // 3 minute 33 seconds
                 'genre' => 'Classical',
@@ -91,7 +91,7 @@ class MusicAlbumTest extends TestCase
 
         $this->assertEquals([
             '@type' => 'MusicGroup',
-            '@id' => 'https://google.com/1-musicgroup',
+            'url' => 'https://google.com/1-musicgroup',
             'name' => 'exercitation ullamco laboris nisi ut',
             'description' => 'Lorem ipsum dolor sit amet',
         ], $context->getProperty('byArtist'));
