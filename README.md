@@ -31,23 +31,39 @@ $ composer require torann/json-ld
 
 ## Context Types
 
- - event
- - business
- - place
- - address
- - geo
- - review
- - person
- - organization
- - article
- - news_article
- - blog_posting
- - breadcrumbs
- - search_box
- - music_group
- - music_album
- - music_recording
- - music_playlist
+- article
+- beach
+- blog_posting
+- breadcrumb_list
+- contact_point
+- corporation
+- creative_work
+- duration
+- event
+- geo_coordinates
+- image_object
+- invoice
+- list_item
+- local_business
+- music_album
+- music_group
+- music_playlist
+- music_recording
+- news_article
+- offer
+- order
+- organization
+- person
+- place
+- postal_address
+- price_specification
+- product
+- rating
+- review
+- search_box
+- thing
+- video_object
+- web_page
 
 ## Examples
 
@@ -56,7 +72,7 @@ $ composer require torann/json-ld
 #### Business
 
 ```php
-$context = \JsonLd\Context::create('business', [
+$context = \JsonLd\Context::create('local_business', [
     'name' => 'Consectetur Adipiscing',
     'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
     'telephone' => '555-555-5555',
@@ -132,7 +148,7 @@ class BusinessPresenter extends Presenter
      */
     public function jsonLd()
     {
-        return Context::create('business', [
+        return Context::create('local_business', [
             'name' => $this->entity->name,
             'description' => $this->entity->description,
             'telephone' => $this->entity->telephone,
@@ -169,6 +185,21 @@ echo $business->present()->jsonLd();
 ```
 
 ## Change Log
+
+ **v0.0.7**
+
+ - Add corporation
+ - Add the ability for custom context types
+ - Fix file structure to adhere to PSR-4 file structure
+
+ **v0.0.6**
+
+ - Code cleanup
+
+ **v0.0.5**
+
+ - Add duration
+ - Update place, review, and local_business
 
  **v0.0.3**
 

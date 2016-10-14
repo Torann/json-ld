@@ -5,7 +5,7 @@ Breadcrumb trails on a page indicate the page's position in the site hierarchy. 
 ## Example
 
 ```php
-$context = \JsonLd\Context::create('breadcrumbs', [
+$context = \JsonLd\Context::create('breadcrumb_list', [
     'itemListElement' => [
         [
             'url' => 'https://example.com/arts',
