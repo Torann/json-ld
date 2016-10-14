@@ -184,6 +184,43 @@ echo $business->present()->jsonLd();
 {!! $business->present()->jsonLd() !!}
 ```
 
+## Custom Context Type
+
+The first argument for the `create($context, array $data = [])` method also accepts class names. This is helpful for custom context types.
+
+```php
+<?php
+
+namespace App\JsonLd;
+
+use JsonLd\ContextTypes\AbstractContext;
+
+class FooBar extends AbstractContext
+{
+    /**
+     * Property structure
+     *
+     * @var array
+     */
+    protected $structure = [
+        'name' => null,
+        'description' => null,
+        'image' => null,
+        'url' => null,
+    ];
+}
+```
+
+```php
+$context = \JsonLd\Context::create(\App\JsonLd\FooBar::class, [
+    'name' => 'Foo Foo headline',
+    'description' => 'Bar bar article description',
+    'url' => 'http://google.com',
+]);
+
+echo $context; // Will output the script tag
+```
+
 ## Change Log
 
  **v0.0.7**
