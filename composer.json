@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "JsonLd\\": "src/JsonLd"
+      "JsonLd\\": "src"
     }
   },
   "autoload-dev": {
