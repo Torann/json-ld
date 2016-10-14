@@ -13,7 +13,6 @@ class Offer extends AbstractContext
         'priceCurrency' => null,
         'priceValidUntil' => null,
         'url' => null,
-        'itemOffered' => null,
         'itemCondition' => null,
         'availability' => null
     ];
