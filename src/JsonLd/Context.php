@@ -144,6 +144,9 @@ class Context
             case 'contact_point':
                 return new ContextTypes\ContactPoint($data);
                 break;
+            case 'corporation':
+                return new ContextTypes\Corporation($data);
+		break;
             case 'creative_work':
                 return new ContextTypes\CreativeWork($data);
                 break;
