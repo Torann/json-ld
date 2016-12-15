@@ -12,6 +12,7 @@ class LocalBusiness extends AbstractContext
     protected $structure = [
         'name' => null,
         'description' => null,
+        'image' => null,
         'telephone' => null,
         'email' => null,
         'openingHours' => null,
