@@ -21,6 +21,7 @@ class NewsArticle extends AbstractContext
         'datePublished' => null,
         'author' => Person::class,
         'publisher' => Organization::class,
+        'articleBody' => null,
     ];
 
     /**
