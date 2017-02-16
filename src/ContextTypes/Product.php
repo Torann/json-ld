@@ -1,5 +1,6 @@
 <?php
 namespace JsonLd\ContextTypes;
+
 class Product extends AbstractContext
 {
     /**
@@ -22,7 +23,33 @@ class Product extends AbstractContext
         'gtin14' => null,
         'mpn' => null,
         'category' => null,
-        'model' => null
+        'model' => null,
+        'isSimilarTo' => Product::class,
     ];
 
+
+    /**
+     * Set isSimilarTo attributes.
+     *
+     * @param  mixed $values
+     * @return array
+     */
+    protected function setIsSimilarToAttribute($values)
+    {
+        if (is_array($values)) {
+            foreach ($values as $key => $value) {
+                $product = new self($value);
+
+                $properties = $product->getProperties();
+
+                unset($properties['@context']);
+
+                $properties = array_filter($properties, 'strlen');
+
+                $values[$key] = $properties;
+            }
+        }
+
+        return $values;
+    }
 }
