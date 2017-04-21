@@ -16,6 +16,8 @@ class LocalBusiness extends AbstractContext
         'telephone' => null,
         'email' => null,
         'openingHours' => null,
+        'priceRange' => null,
+        'image' => ImageObject::class,
         'address' => PostalAddress::class,
         'geo' => GeoCoordinates::class,
         'review' => Review::class,

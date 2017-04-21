@@ -1,5 +1,5 @@
 {
-  "name": "torann/json-ld",
+  "name": "blackfyre/json-ld",
   "description": "Extremely simple JSON-LD markup generator.",
   "keywords": ["json-ld", "generator", "schema", "structured-data"],
   "license": "BSD 2-Clause",
@@ -7,6 +7,10 @@
     {
       "name": "Daniel Stainback",
       "email": "daniel@lyften.com"
+    },
+    {
+      "name": "Galicz Miklós",
+      "email": "gnick666@gmail.com"
     }
   ],
   "require": {
@@ -24,11 +28,6 @@
   "autoload-dev": {
     "psr-4": {
       "JsonLd\\Test\\": "tests"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "0.1-dev"
     }
   },
   "archive" : {
