@@ -38,17 +38,26 @@ abstract class MusicAbstractContext extends AbstractContext
     /**
      * Set artist attribute
      *
-     * @param array|string $item
+     * @param array|string $items
      * @return array
      */
-    protected function setByArtistAttribute($item)
+    protected function setByArtistAttribute($items)
     {
-        if ( ! is_array($item))
+        if ( ! is_array($items))
         {
-            return $item;
+            return $items;
         }
 
-        return $this->getNestedContext(MusicGroup::class, $item);
+        //Check if not multidimensional array (for backward compatibility)
+        if((count($items) == count($items, COUNT_RECURSIVE)))
+        {
+            return $this->getNestedContext(MusicGroup::class, $items);
+        }
+
+        //multiple artists
+        return array_map(function ($item) {
+            return $this->getNestedContext(MusicGroup::class, $item);
+        }, $items);
     }
 
     /**
