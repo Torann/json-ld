@@ -26,17 +26,26 @@ class MusicRecording extends MusicAbstractContext
     /**
      * Set in album attribute
      *
-     * @param array|string $item
+     * @param array|string $items
      * @return array
      */
-    protected function setInAlbumAttribute($item)
+    protected function setInAlbumAttribute($items)
     {
-        if ( ! is_array($item))
+        if ( ! is_array($items))
         {
-            return $item;
+            return $items;
         }
 
-        return $this->getNestedContext(MusicAlbum::class, $item);
+        //Check if not multidimensional array (for backward compatibility)
+        if((count($items) == count($items, COUNT_RECURSIVE)))
+        {
+            return $this->getNestedContext(MusicAlbum::class, $items);
+        }
+
+        //multiple albums
+        return array_map(function ($item) {
+            return $this->getNestedContext(MusicAlbum::class, $item);
+        }, $items);
     }
 
     /**
