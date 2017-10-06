@@ -20,6 +20,8 @@ class LocalBusiness extends AbstractContext
         'geo' => GeoCoordinates::class,
         'review' => Review::class,
         'aggregateRating' => AggregateRating::class,
+        'url' => null,
+        'priceRange' => null,
     ];
 
     /**
