@@ -14,6 +14,7 @@ class Offer extends AbstractContext
         'priceValidUntil' => null,
         'url' => null,
         'itemCondition' => null,
-        'availability' => null
+        'availability' => null,
+        'eligibleQuantity' => QuantitativeValue::class,
     ];
 }
