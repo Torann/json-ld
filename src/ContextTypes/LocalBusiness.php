@@ -22,6 +22,8 @@ class LocalBusiness extends AbstractContext
         'aggregateRating' => AggregateRating::class,
         'url' => null,
         'priceRange' => null,
+        'areaServed' => null,
+        'hasMap' => null,
     ];
 
     /**
