@@ -2,7 +2,7 @@
   "name": "torann/json-ld",
   "description": "Extremely simple JSON-LD markup generator.",
   "keywords": ["json-ld", "generator", "schema", "structured-data"],
-  "license": "BSD 2-Clause",
+  "license": "BSD-2-Clause",
   "authors": [
     {
       "name": "Daniel Stainback",
