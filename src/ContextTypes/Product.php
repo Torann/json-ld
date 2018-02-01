@@ -25,6 +25,9 @@ class Product extends AbstractContext
         'category' => null,
         'model' => null,
         'isSimilarTo' => Product::class,
+        'height' => QuantitativeValue::class,
+        'width' => QuantitativeValue::class,
+        'weight' => QuantitativeValue::class,
     ];
 
 
