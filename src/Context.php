@@ -33,7 +33,7 @@ class Context
      * @param string $context
      * @param array  $data
      *
-     * @return string
+     * @return static
      */
     public static function create($context, array $data = [])
     {
