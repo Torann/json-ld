@@ -32,7 +32,7 @@ class CreativeWork extends AbstractContext
      * Set the article body attribute.
      *
      * @param  string $txt
-     * @return array
+     * @return string
      */
     protected function setTextAttribute($txt)
     {
