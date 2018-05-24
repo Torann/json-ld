@@ -20,6 +20,8 @@ class Article extends AbstractContext
         'text' => null,
         'review' => Review::class,
         'publisher' => Organization::class,
+        'keywords' => null,
+        'inLanguage' => null,
         'dateCreated' => null,
         'dateModified' => null,
         'datePublished' => null,
