@@ -36,6 +36,8 @@ class ArticleTest extends TestCase
                 'height' => 60,
             ]
         ],
+        'keywords' => 'Lorem,ipsum,dolor',
+        'inLanguage' => 'en',
         'dateCreated' => '2013-10-04T00:00',
         'dateModified' => '2013-10-04T00:00',
         'datePublished' => '2013-10-04T00:00',
@@ -128,6 +130,26 @@ class ArticleTest extends TestCase
                 'width' => 600,
             ],
         ], $context->getProperty('publisher'));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldHaveKeywords()
+    {
+        $context = $this->make();
+
+        $this->assertEquals('Lorem,ipsum,dolor', $context->getProperty('keywords'));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldHaveInLanguage()
+    {
+        $context = $this->make();
+
+        $this->assertEquals('en', $context->getProperty('inLanguage'));
     }
 
     /**
