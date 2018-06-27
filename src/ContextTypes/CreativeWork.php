@@ -2,14 +2,14 @@
 
 namespace JsonLd\ContextTypes;
 
-class CreativeWork extends AbstractContext
+class CreativeWork extends Thing
 {
     /**
      * Property structure
      *
      * @var array
      */
-    protected $structure = [
+    private $extendedStructure = [
         'name' => null,
         'url' => null,
         'aggregateRating' => AggregateRating::class,
@@ -21,12 +21,18 @@ class CreativeWork extends AbstractContext
         'headline' => null,
         'image' => ImageObject::class,
         'inLanguage' => null,
+        'publication' => PublicationEvent::class,
         'publisher' => Organization::class,
         'review' => Review::class,
         'text' => null,
         'thumbnailUrl' => null,
         'video' => VideoObject::class,
     ];
+
+    public function __construct(array $attributes, array $extendedStructure = [])
+    {
+        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
+    }
 
     /**
      * Set the article body attribute.

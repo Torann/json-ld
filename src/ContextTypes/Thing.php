@@ -13,6 +13,7 @@ class Thing extends AbstractContext
         'name' => null,
         'alternateName' => null,
         'description' => null,
+        'identifier' => null,
         'image' => null,
         'url' => null,
     ];
