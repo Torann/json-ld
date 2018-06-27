@@ -10,6 +10,11 @@ class Person extends AbstractContext
      * @var array
      */
     protected $structure = [
-        'name' => null,
+        'givenName' => null,
+        'familyName' => null,
+        'email' => null,
+        'image' => null,
+        'jobTitle' => null,
+        'telephone' => null,
     ];
 }
