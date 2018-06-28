@@ -192,7 +192,7 @@ abstract class AbstractContext implements ContextTypeInterface
      *
      * @param  string $class
      * @param  array  $attributes
-     * @return array
+     * @return array|null
      */
     protected function getNestedContext($class, $attributes = null)
     {
