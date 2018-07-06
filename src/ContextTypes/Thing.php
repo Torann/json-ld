@@ -6,15 +6,18 @@ class Thing extends AbstractContext
 {
     /**
      * Property structure
+     * reference: https://schema.org/Thing (alphabetical order)
      *
      * @var array
      */
     protected $structure = [
-        'name' => null,
         'alternateName' => null,
         'description' => null,
-        'image' => null,
-        'url' => null,
+        'image' => ImageObject::class,
+        'mainEntityOfPage' => WebPage::class,
+        'name' => null,
+        'sameAs' => null,
+        'url' => null
     ];
 
     /**

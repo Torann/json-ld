@@ -20,4 +20,26 @@ class TestCase extends PHPUnit_Framework_TestCase
     {
         return new $this->class($this->attributes);
     }
+
+    protected function makeJsonLdContext()
+    {
+        return \JsonLd\Context::create($this->class, $this->attributes);
+    }
+
+    public function testGenerateLdJson()
+    {
+        $context = $this->make();
+        $jsonLdContext = $this->makeJsonLdContext();
+
+        $html = $jsonLdContext->generate();
+        $properties = $context->getProperties();
+
+        $this->assertNotNull($html);
+        foreach ($properties as $k => $v) {
+            if ($v != null) {
+                $this->assertContains(json_encode($k), $html);
+                $this->assertContains(json_encode($v), $html);
+            }
+        }
+    }
 }
