@@ -21,6 +21,15 @@ class TestCase extends PHPUnit_Framework_TestCase
         return new $this->class($this->attributes);
     }
 
+    protected function assertPropertyEquals($property, $expectedValue)
+    {
+        $context = $this->make();
+
+        $assertMessage = 'asserting \''.$this->class.'\' property \''.$property.'\'';
+        $this->assertEquals($expectedValue, $context->getProperty($property), $assertMessage);
+    }
+
+
     protected function makeJsonLdContext()
     {
         return \JsonLd\Context::create($this->class, $this->attributes);
