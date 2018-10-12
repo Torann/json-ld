@@ -29,11 +29,8 @@ class CreativeWork extends Thing
         'review' => Review::class,
         'text' => null,
         'thumbnailUrl' => null,
-        'video' => VideoObject::class
+        'video' => VideoObject::class,
     ];
-
-
-
 
     /**
      * Constructor. Merges extendedStructure up
@@ -43,7 +40,9 @@ class CreativeWork extends Thing
      */
     public function __construct(array $attributes, array $extendedStructure = [])
     {
-        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
+        parent::__construct(
+            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
+        );
     }
 
     /**
@@ -65,7 +64,7 @@ class CreativeWork extends Thing
      */
     protected function setCommentAttribute($items)
     {
-        if (!is_array($items)) {
+        if (is_array($items) === false) {
             return $items;
         }
 
@@ -73,5 +72,4 @@ class CreativeWork extends Thing
             return $this->getNestedContext(Comment::class, $item);
         }, $items);
     }
-
 }
