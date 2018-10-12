@@ -2,14 +2,14 @@
 
 namespace JsonLd\ContextTypes;
 
-class Sculpture extends CreativeWork {
+class Sculpture extends CreativeWork 
+{
     /**
      * Property structure.
      *
      * @var array
      */
-    private $extendedStructure = [
-    ];
+    private $extendedStructure = [];
 
     /**
      * Constructor. Merges extendedStructure up
@@ -19,6 +19,8 @@ class Sculpture extends CreativeWork {
      */
     public function __construct(array $attributes, array $extendedStructure = [])
     {
-        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
+        parent::__construct(
+            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
+        );
     }
 }
