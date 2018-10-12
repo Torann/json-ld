@@ -11,12 +11,15 @@ class Article extends CreativeWork
      * @var array
      */
     private $extendedStructure = [
+        'description' => null,
+        'keywords' => null, 
         'articleBody' => null,
         'articleSection' => null,
         'pageEnd' => null,
         'pageStart' => null,
         'pagination' => null,
-        'wordCount' => null
+        'wordCount' => null,
+        'mainEntityOfPage' => WebPage::class,
     ];
 
     /**
