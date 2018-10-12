@@ -2,7 +2,8 @@
 
 namespace JsonLd\ContextTypes;
 
-class Comment extends CreativeWork {
+class Comment extends CreativeWork 
+{
     /**
      * Property structure.
      * reference: https://schema.org/Comment (alphabetical order)
@@ -11,9 +12,8 @@ class Comment extends CreativeWork {
      */
     private $extendedStructure = [
         'downvoteCount' => null,
-        'upvoteCount' => null
+        'upvoteCount' => null,
     ];
-
 
     /**
      * Constructor. Merges extendedStructure up
@@ -23,6 +23,8 @@ class Comment extends CreativeWork {
      */
     public function __construct(array $attributes, array $extendedStructure = [])
     {
-        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
+        parent::__construct(
+            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
+        );
     }
 }
