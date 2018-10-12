@@ -2,40 +2,34 @@
 
 namespace JsonLd\ContextTypes;
 
-class Article extends AbstractContext
+class Article extends CreativeWork
 {
     /**
      * Property structure
+     * reference: https://schema.org/Article (alphabetical order)
      *
      * @var array
      */
-    protected $structure = [
-        'name' => null,
-        'url' => null,
-        'description' => null,
-
-        'image' => ImageObject::class,
-        'video' => VideoObject::class,
-        'thumbnailUrl' => null,
-        'text' => null,
-        'review' => Review::class,
-        'publisher' => Organization::class,
-        'keywords' => null,
-        'inLanguage' => null,
-        'dateCreated' => null,
-        'dateModified' => null,
-        'datePublished' => null,
-        'author' => Person::class,
-        'aggregateRating' => AggregateRating::class,
-
+    private $extendedStructure = [
         'articleBody' => null,
         'articleSection' => null,
         'pageEnd' => null,
         'pageStart' => null,
         'pagination' => null,
+        'wordCount' => null,
         'mainEntityOfPage' => WebPage::class,
-        'headline' => null,
     ];
+
+    /**
+     * Constructor. Merges extendedStructure up
+     *
+     * @param array $attributes
+     * @param array $extendedStructure
+     */
+    public function __construct(array $attributes, array $extendedStructure = [])
+    {
+        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
+    }
 
     /**
      * Set the description attribute.

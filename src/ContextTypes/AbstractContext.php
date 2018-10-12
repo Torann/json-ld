@@ -168,7 +168,7 @@ abstract class AbstractContext implements ContextTypeInterface
         }
 
         // Map properties to object
-        if (is_array($value)) {
+        if ($property !== null && is_array($property) && is_array($value)) {
             return $this->properties[$key] = $this->mapProperty($property, $value);
         }
 
