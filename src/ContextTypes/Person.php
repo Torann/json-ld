@@ -34,7 +34,7 @@ class Person extends Thing
         'jobTitle' => null,
         'parent' => Person::class,
         'telephone' => null,
-        'workLocation' => Place::class
+        'workLocation' => Place::class,
     ];
 
     /**
@@ -56,9 +56,10 @@ class Person extends Thing
      */
     protected function setAddressAttribute($items)
     {
-        if (!is_array($items)) {
+        if (is_array($items) === false) {
             return $items;
         }
+        
         return $this->getNestedContext(PostalAddress::class, $items);
     }
 }
