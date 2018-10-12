@@ -17,7 +17,7 @@ class Thing extends AbstractContext
         'mainEntityOfPage' => WebPage::class,
         'name' => null,
         'sameAs' => null,
-        'url' => null
+        'url' => null,
     ];
 
     /**
