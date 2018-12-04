@@ -17,7 +17,10 @@ class CreativeWorkTest extends TestCase
             'ratingCount' => 4,
         ],
         'author' => [
-            'name' => 'Joe Joe',
+            ['@type' => 'Person',
+             'name' => 'Joe Joe'],
+            ['@type' => 'Person',
+             'name' => 'Jammy Joe'],
         ],
         'creator' => [
             'name' => 'Joe Joe',
@@ -37,7 +40,8 @@ class CreativeWorkTest extends TestCase
             ]
         ],
         'review' => [
-            'reviewRating' => 5,
+            ['@type' => 'Review', 'name' => 'first review', 'reviewRating' => 3],
+            ['@type' => 'Review', 'name' => 'second review', 'reviewRating' => 5],
         ],
         'video' => [
             "url" => 'https://google.com/thumbnail1.mov',
@@ -66,15 +70,20 @@ class CreativeWorkTest extends TestCase
     /**
      * @test
      */
-    public function shouldHaveAuthorObject()
+    public function shouldHave2AuthorsArray()
     {
         $context = $this->make();
 
         $this->assertEquals([
             '@type' => 'Person',
             'name' => 'Joe Joe',
-        ], $context->getProperty('author'));
+        ], $context->getProperty('author')[0]);
+        $this->assertEquals([
+            '@type' => 'Person',
+            'name' => 'Jammy Joe',
+        ], $context->getProperty('author')[1]);
     }
+
 
     /**
      * @test
@@ -126,14 +135,20 @@ class CreativeWorkTest extends TestCase
     /**
      * @test
      */
-    public function shouldHaveReviewObject()
+    public function shouldHave2ReviewsArray()
     {
         $context = $this->make();
 
         $this->assertEquals([
             '@type' => 'Review',
-            'reviewRating' => 5,
-        ], $context->getProperty('review'));
+            'name' => 'first review',
+            'reviewRating' => 3
+        ], $context->getProperty('review')[0]);
+        $this->assertEquals([
+            '@type' => 'Review',
+            'name' => 'second review',
+            'reviewRating' => 5
+        ], $context->getProperty('review')[1]);
     }
 
     /**
