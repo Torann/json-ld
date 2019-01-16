@@ -25,6 +25,7 @@ class ArticleTest extends TestCase
         'thumbnailUrl' => 'https://google.com/thumbnail1.jpg',
         'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
         'review' => [
+            '@type' => 'Review',
             'reviewRating' => 5,
         ],
         'publisher' => [
@@ -53,6 +54,7 @@ class ArticleTest extends TestCase
         'dateModified' => '2013-10-04T00:00',
         'datePublished' => '2013-10-04T00:00',
         'author' => [
+            '@type' => 'Person',
             'name' => 'Joe Joe',
         ],
         'mainEntityOfPage' => [

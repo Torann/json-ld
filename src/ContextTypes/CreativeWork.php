@@ -57,6 +57,23 @@ class CreativeWork extends Thing
     }
 
     /**
+     * Set the authors
+     *
+     * @param array $items
+     * @return array
+     */
+    protected function setAuthorAttribute($items)
+    {
+        if (is_array($items) === false) {
+            return $items;
+        }
+
+        return array_map(function ($item) {
+            return $this->getNestedContext(Person::class, $item);
+        }, $items);
+    }
+
+    /**
      * Set the comments
      *
      * @param array $items
@@ -70,6 +87,23 @@ class CreativeWork extends Thing
 
         return array_map(function ($item) {
             return $this->getNestedContext(Comment::class, $item);
+        }, $items);
+    }
+
+    /**
+     * Set the reviews
+     *
+     * @param array $items
+     * @return array
+     */
+    protected function setReviewAttribute($items)
+    {
+        if (is_array($items) === false) {
+            return $items;
+        }
+
+        return array_map(function ($item) {
+            return $this->getNestedContext(Review::class, $item);
         }, $items);
     }
 }
