@@ -21,8 +21,9 @@ class Recipe extends CreativeWork
         'recipeIngredient' => null,
         'recipeInstructions' => null,
         'recipeYield' => null,
+        'recipeCuisine' => null,
         'author' => null,
-        'nutritionInformation' => NutritionInformation::class,
+        'nutrition' => NutritionInformation::class,
         'aggregateRating' => AggregateRating::class,
         'review' => Review::class,
     ];

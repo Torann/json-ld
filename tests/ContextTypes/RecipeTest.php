@@ -27,14 +27,15 @@ class RecipeTest extends TestCase
         ],
         'recipeInstructions' => '1. work with eggs, 2. add suger, 3. done',
         'recipeYield' => '30 packages',
+        'recipeCuisine' => 'American',
         'author' => 'Acme Corp.',
-        'nutritionInformation' => [
+        'nutrition' => [
             'calories' => '428 calories',
             'fatContent' => '23g fat (8g saturated fat)',
             'cholesterolContent' => '53mg cholesterol',
             'sodiumContent' => '1146mg sodium',
             'carbohydrateContent' => '33g carbohydrate (3g sugars',
-            'fiberContent' => '2g fiber)',
+            'fiberContent' => '2g fiber',
             'proteinContent' => '21g protein.',
         ],
         'aggregateRating' => [
@@ -66,9 +67,10 @@ class RecipeTest extends TestCase
         $this->assertEquals(2, count($context->getProperty('recipeIngredient')));
         $this->assertEquals(3, count($context->getProperty('recipeCategory')));
 
-        $nutritionInformation = $context->getProperty('nutritionInformation');
-        $this->assertEquals(8, count($nutritionInformation));
-        $this->assertEquals('2g fiber)', $nutritionInformation['fiberContent']);
+        $nutrition = $context->getProperty('nutrition');
+        $this->assertEquals(8, count($nutrition));
+        $this->assertEquals('2g fiber', $nutrition['fiberContent']);
+        $this->assertEquals('428 calories', $nutrition['calories']);
 
         $this->assertEquals([
             '@type' => 'AggregateRating',
