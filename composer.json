@@ -1,5 +1,5 @@
 {
-  "name": "torann/json-ld",
+  "name": "mh/json-ld",
   "description": "Extremely simple JSON-LD markup generator.",
   "keywords": ["json-ld", "generator", "schema", "structured-data"],
   "license": "BSD-2-Clause",
@@ -7,6 +7,10 @@
     {
       "name": "Daniel Stainback",
       "email": "daniel@lyften.com"
+    },
+    {
+      "name": "Michael Holm",
+      "email": "hollo@hollo.dk"
     }
   ],
   "require": {
