@@ -28,7 +28,9 @@ class RecipeTest extends TestCase
         'recipeInstructions' => '1. work with eggs, 2. add suger, 3. done',
         'recipeYield' => '30 packages',
         'recipeCuisine' => 'American',
-        'author' => 'Acme Corp.',
+        'author' => [
+            'givenName' => 'Peter',
+        ],
         'nutrition' => [
             'calories' => '428 calories',
             'fatContent' => '23g fat (8g saturated fat)',
@@ -53,6 +55,9 @@ class RecipeTest extends TestCase
                 'reviewRating' => 5
             ],
         ],
+        'video' => [
+            'url' => 'http://www.google.com',
+        ]
     ];
 
     /**
@@ -68,19 +73,28 @@ class RecipeTest extends TestCase
         $this->assertEquals(3, count($context->getProperty('recipeCategory')));
 
         $nutrition = $context->getProperty('nutrition');
+        $this->assertEquals('NutritionInformation', $nutrition['@type']);
         $this->assertEquals(8, count($nutrition));
         $this->assertEquals('2g fiber', $nutrition['fiberContent']);
         $this->assertEquals('428 calories', $nutrition['calories']);
 
-        $this->assertEquals([
-            '@type' => 'AggregateRating',
-            'ratingValue' => 5,
-            'reviewCount' => 5,
-            'ratingCount' => 3,
-        ], $context->getProperty('aggregateRating'));
+        $this->assertEquals(
+            [
+                '@type' => 'AggregateRating',
+                'ratingValue' => 5,
+                'reviewCount' => 5,
+                'ratingCount' => 3,
+            ],
+            $context->getProperty('aggregateRating')
+        );
 
         $review = $context->getProperty('review');
-
         $this->assertEquals('Review', $review[1]['@type']);
+
+        $author = $context->getProperty('author');
+        $this->assertEquals('Person', $author['@type']);
+
+        $video = $context->getProperty('video');
+        $this->assertEquals('VideoObject', $video['@type']);
     }
 }
