@@ -13,7 +13,7 @@ class ProductTest extends TestCase
         'category' => 'Droppables / Anvils',
         'model' => 'Acme Exec. Anvil',
         'image' => 'http://www.example.com/anvil_executive.jpg',
-        'description' => 'Sleeker than ACME\'s Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.',
+        'description' => 'Sleeker than ACME\u0027s Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.',
         'sku' => '925872',
         'brand' => 'Acme Inc.',
         'aggregateRating' => [
