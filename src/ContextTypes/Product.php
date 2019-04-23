@@ -14,6 +14,7 @@ class Product extends AbstractContext
         'brand' => null,
         'image' => null,
         'sku' => null,
+        'productID' => null,
         'url' => null,
         'review' => Review::class,
         'aggregateRating' => AggregateRating::class,
