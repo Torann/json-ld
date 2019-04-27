@@ -4,7 +4,7 @@ namespace JsonLd\Test\ContextTypes;
 
 use JsonLd\Test\TestCase;
 
-class OrganizationTest extends TestCase
+class Organization2ContactsTest extends TestCase
 {
     protected $class = \JsonLd\ContextTypes\Organization::class;
 
@@ -19,38 +19,34 @@ class OrganizationTest extends TestCase
         ],
         'logo' => 'https://google.com/thumbnail1.jpg',
         'contactPoint' => [
-            'telephone' => '18009999999',
+        	['@type' => 'contactPoint',
+            'telephone' => '18008888888',
             'contactType' => 'customer service',
+			],
+        	['@type' => 'contactPoint',
+            'telephone' => '18009999999',
+            'contactType' => 'sales',
+			],
         ],
     ];
 
     /**
      * @test
      */
-    public function shouldHaveContactPointObject()
+    public function shouldHave2ContactsArray()
     {
         $context = $this->make();
 
-        $this->assertEquals([
-            '@type' => 'ContactPoint',
-            'telephone' => '18009999999',
-            'contactType' => 'customer service',
-        ], $context->getProperty('contactPoint'));
+	    $this->assertEquals([
+		    '@type' => 'ContactPoint',
+		    'telephone' => '18008888888',
+		    'contactType' => 'customer service',
+	    ], $context->getProperty('contactPoint')[0]);
+	    $this->assertEquals([
+		    '@type' => 'ContactPoint',
+		    'telephone' => '18009999999',
+		    'contactType' => 'sales',
+	    ], $context->getProperty('contactPoint')[1]);
     }
 
-	/**
-	 * @test
-	 */
-	public function shouldHaveAddressArray()
-	{
-		$context = $this->make();
-
-		$this->assertEquals([
-			'@type' => 'PostalAddress',
-			'streetAddress' => '112 Apple St.',
-			'addressLocality' => 'Hamden',
-			'addressRegion' => 'CT',
-			'postalCode' => '06514',
-		], $context->getProperty('address'));
-    }
 }
