@@ -27,8 +27,8 @@ class EventTest extends TestCase
                 'postalCode' => '06514',
             ],
         ],
-	    'image' => 'https://google.com/some_logo.png',
-	    'description' => 'A description',
+        'image' => 'https://google.com/some_logo.png',
+        'description' => 'A description',
     ];
 
     /**
@@ -67,27 +67,27 @@ class EventTest extends TestCase
         ], $context->getProperty('location'));
     }
 
-	/**
-	 * @test
-	 */
-	public function shouldHaveImage()
-	{
-		$context = $this->make();
+    /**
+     * @test
+     */
+    public function shouldHaveImage()
+    {
+        $context = $this->make();
 
-		$this->assertEquals(
-			'https://google.com/some_logo.png'
-		, $context->getProperty('image'));
+        $this->assertEquals(
+            'https://google.com/some_logo.png'
+        , $context->getProperty('image'));
     }
 
-	/**
-	 * @test
-	 */
-	public function shouldHaveDescription()
-	{
-		$context = $this->make();
+    /**
+     * @test
+     */
+    public function shouldHaveDescription()
+    {
+        $context = $this->make();
 
-		$this->assertEquals(
-			'A description'
-			, $context->getProperty('description'));
-	}
+        $this->assertEquals(
+            'A description'
+            , $context->getProperty('description'));
+    }
 }
