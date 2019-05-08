@@ -19,14 +19,14 @@ class Organization2ContactsTest extends TestCase
         ],
         'logo' => 'https://google.com/thumbnail1.jpg',
         'contactPoint' => [
-        	['@type' => 'contactPoint',
+            ['@type' => 'contactPoint',
             'telephone' => '18008888888',
             'contactType' => 'customer service',
-			],
-        	['@type' => 'contactPoint',
+            ],
+            ['@type' => 'contactPoint',
             'telephone' => '18009999999',
             'contactType' => 'sales',
-			],
+            ],
         ],
     ];
 
@@ -37,16 +37,15 @@ class Organization2ContactsTest extends TestCase
     {
         $context = $this->make();
 
-	    $this->assertEquals([
-		    '@type' => 'ContactPoint',
-		    'telephone' => '18008888888',
-		    'contactType' => 'customer service',
-	    ], $context->getProperty('contactPoint')[0]);
-	    $this->assertEquals([
-		    '@type' => 'ContactPoint',
-		    'telephone' => '18009999999',
-		    'contactType' => 'sales',
-	    ], $context->getProperty('contactPoint')[1]);
+        $this->assertEquals([
+            '@type' => 'ContactPoint',
+            'telephone' => '18008888888',
+            'contactType' => 'customer service',
+        ], $context->getProperty('contactPoint')[0]);
+        $this->assertEquals([
+            '@type' => 'ContactPoint',
+            'telephone' => '18009999999',
+            'contactType' => 'sales',
+        ], $context->getProperty('contactPoint')[1]);
     }
-
 }
