@@ -12,5 +12,6 @@ class ContactPoint extends AbstractContext
     protected $structure = [
         'telephone' => null,
         'contactType' => null,
+        'email' => null,
     ];
 }
