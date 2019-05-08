@@ -38,19 +38,19 @@ class OrganizationTest extends TestCase
         ], $context->getProperty('contactPoint'));
     }
 
-	/**
-	 * @test
-	 */
-	public function shouldHaveAddressArray()
-	{
-		$context = $this->make();
+    /**
+     * @test
+     */
+    public function shouldHaveAddressArray()
+    {
+        $context = $this->make();
 
-		$this->assertEquals([
-			'@type' => 'PostalAddress',
-			'streetAddress' => '112 Apple St.',
-			'addressLocality' => 'Hamden',
-			'addressRegion' => 'CT',
-			'postalCode' => '06514',
-		], $context->getProperty('address'));
+        $this->assertEquals([
+            '@type' => 'PostalAddress',
+            'streetAddress' => '112 Apple St.',
+            'addressLocality' => 'Hamden',
+            'addressRegion' => 'CT',
+            'postalCode' => '06514',
+        ], $context->getProperty('address'));
     }
 }
