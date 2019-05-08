@@ -26,4 +26,26 @@ class Organization extends Thing
         parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
     }
 
+    /**
+     * Set the contactPoints
+     *
+     * @param array $items
+     * @return array
+     */
+    protected function setContactPointAttribute($items)
+    {
+        if (is_array($items) === false) {
+            return $items;
+        }
+
+        //Check if it is an array with one dimension
+        if (is_array(reset($items)) === false) {
+            return $this->getNestedContext(ContactPoint::class, $items);
+        }
+
+        //Process multi dimensional array
+        return array_map(function ($item) {
+            return $this->getNestedContext(ContactPoint::class, $item);
+        }, $items);
+    }
 }
