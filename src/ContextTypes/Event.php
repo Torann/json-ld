@@ -2,14 +2,14 @@
 
 namespace JsonLd\ContextTypes;
 
-class Event extends AbstractContext
+class Event extends Thing
 {
     /**
      * Property structure
      *
      * @var array
      */
-    protected $structure = [
+    protected $extendedStructure = [
         'name' => null,
         'startDate' => null,
         'endDate' => null,
@@ -18,7 +18,20 @@ class Event extends AbstractContext
         'location' => Place::class,
     ];
 
-    /**
+	/**
+	 * Constructor. Merges extendedStructure up
+	 *
+	 * @param array $attributes
+	 * @param array $extendedStructure
+	 */
+	public function __construct(array $attributes, array $extendedStructure = [])
+	{
+		parent::__construct(
+			$attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
+		);
+	}
+
+	/**
      * Set offers attributes.
      *
      * @param  mixed $values
