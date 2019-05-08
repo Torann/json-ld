@@ -15,6 +15,6 @@ class AggregateRating extends AbstractContext
         'bestRating' => null,
         'worstRating' => null,
         'ratingCount' => null,
-	    'itemReviewed' => Thing::class,
+        'itemReviewed' => Thing::class,
     ];
 }
