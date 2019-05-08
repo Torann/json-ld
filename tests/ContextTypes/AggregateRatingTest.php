@@ -15,6 +15,10 @@ class AggregateRatingTest extends TestCase
         'bestRating' => 4.5,
         'worstRating' => 1,
         'ratingCount' => 4,
+        'itemReviewed' => [
+            '@type' => 'Thing',
+            'name' => 'Fluff Hut',
+        ],
     ];
 
     /**
