@@ -5,6 +5,7 @@ namespace JsonLd\ContextTypes;
 use DateTime;
 use JsonLd\Context;
 use JsonLd\Contracts\ContextTypeInterface;
+use JsonLd\Contracts\DataTypeInterface;
 
 abstract class AbstractContext implements ContextTypeInterface
 {
@@ -99,17 +100,6 @@ abstract class AbstractContext implements ContextTypeInterface
     }
 
     /**
-     * Set sameAs Attribute
-     *
-     * @param mixed $value
-     * @return mixed
-     */
-    protected function setSameAsAttribute($value)
-    {
-        return $value;
-    }
-
-    /**
      * Creates context properties.
      *
      * @return array
@@ -152,9 +142,11 @@ abstract class AbstractContext implements ContextTypeInterface
             return $this->properties[$key] = $this->mutateAttribute($key, $value);
         }
 
-        // Format date and time to UTC
-        if ($value instanceof DateTime) {
-            return $this->properties[$key] = $value->format('Y-m-d\TH:i:s');
+        if (class_exists($property)) {
+            $reflect = new \ReflectionClass($property);
+            if ($reflect->implementsInterface('JsonLd\Contracts\DataTypeInterface')) {
+                return $this->properties[$key] = $this->getDataType($property, $value);
+            }
         }
 
         // Set nested context
@@ -204,6 +196,23 @@ abstract class AbstractContext implements ContextTypeInterface
 
         // Return context attributes
         return $this->filterNestedContext($context->getProperties());
+    }
+
+    /**
+     * @param string $class
+     * @param mixed $attributes
+     * @return Mixed|DataTypeInterface
+     * @throws \ReflectionException
+     */
+    protected function getDataType($class, $attributes = null)
+    {
+        $reflect = new \ReflectionClass($class);
+        if ($reflect->implementsInterface('JsonLd\Contracts\DataTypeInterface')) {
+            $dataType = new $class($attributes);
+            return $dataType->getValue();
+        }
+
+        return $attributes;
     }
 
     /**

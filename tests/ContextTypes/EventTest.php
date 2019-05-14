@@ -90,4 +90,32 @@ class EventTest extends TestCase
             'A description'
             , $context->getProperty('description'));
     }
+
+    /**
+     * @test
+     */
+    public function shouldWorkWithDateTimeAsString()
+    {
+        $this->attributes['startDate'] = '2013-10-04T00:00';
+        $context = $this->make();
+
+        $this->assertEquals(
+            '2013-10-04T00:00'
+            , $context->getProperty('startDate'));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldWorkWithDateTime()
+    {
+        $this->attributes['startDate'] = new \DateTime('2013-10-04T00:00');
+        $context = $this->make();
+
+        $this->assertEquals(
+            '2013-10-04T00:00:00'
+            , $context->getProperty('startDate'));
+    }
+
+
 }

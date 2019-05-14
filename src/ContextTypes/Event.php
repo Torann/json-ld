@@ -2,6 +2,8 @@
 
 namespace JsonLd\ContextTypes;
 
+use JsonLd\DataTypes\DateTime;
+
 class Event extends Thing
 {
     /**
@@ -10,10 +12,8 @@ class Event extends Thing
      * @var array
      */
     protected $extendedStructure = [
-        'name' => null,
-        'startDate' => null,
-        'endDate' => null,
-        'url' => null,
+        'startDate' => DateTime::class,
+        'endDate' => DateTime::class,
         'offers' => [],
         'location' => Place::class,
     ];
