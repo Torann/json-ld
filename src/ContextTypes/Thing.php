@@ -1,6 +1,8 @@
 <?php
 
 namespace JsonLd\ContextTypes;
+use JsonLd\DataTypes\Text;
+use JsonLd\DataTypes\URL;
 
 class Thing extends AbstractContext
 {
@@ -11,13 +13,18 @@ class Thing extends AbstractContext
      * @var array
      */
     protected $structure = [
-        'alternateName' => null,
-        'description' => null,
-        'image' => ImageObject::class,
-        'mainEntityOfPage' => WebPage::class,
-        'name' => null,
-        'sameAs' => null,
-        'url' => null,
+        'additionalType' => URL::class,
+        'alternateName' => Text::class,
+        'description' => Text::class,
+        'disambiguatingDescription' => Text::class,
+//        'identifier' => PropertyValue::class or Text::class or URL::class,
+        'image' => ImageObject::class, //or URL::class
+        'mainEntityOfPage' => WebPage::class, //CreativeWork::class or URL::class
+        'name' => Text::class,
+//        'potentialAction' => Action::class,
+        'sameAs' => Text::class,
+//        'subjectOf' => CreativeWork::class or Event::class,
+        'url' => URL::class,
     ];
 
     /**
@@ -43,4 +50,5 @@ class Thing extends AbstractContext
         // TODO: Add type validation
         return $type;
     }
+
 }
