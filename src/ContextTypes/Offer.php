@@ -20,6 +20,6 @@ class Offer extends Thing
         'eligibleQuantity' => QuantitativeValue::class,
         'category' => null,
         'validFrom' => null,
-        'seller' => null,
+        'seller' => Organization::class,
     ];
 }
