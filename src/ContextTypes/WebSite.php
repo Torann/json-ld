@@ -15,6 +15,7 @@ class WebSite extends AbstractContext
         'image'    => null,
         'name'     => null,
         'url'      => null,
+        'potentialAction' => null,
         'publisher' => Organization::class,
         'keywords' => null,
         'inLanguage' => null,
