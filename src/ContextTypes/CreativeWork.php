@@ -24,6 +24,7 @@ class CreativeWork extends Thing
         'headline' => null,
         'inLanguage' => null,
         'keywords' => null,
+        'learningResourceType' => null,
         'mainEntity' => Thing::class,
         'publisher' => Organization::class,
         'review' => Review::class,
