@@ -32,22 +32,24 @@ class Event extends Thing
     /**
      * Set offers attributes.
      *
-     * @param mixed $values
+     * @param mixed $items
      *
      * @return array
      */
-    protected function setOffersAttribute($values)
+    protected function setOffersAttribute($items)
     {
-        if (is_array($values)) {
-            foreach ($values as $key => $value) {
-                $values[$key] = $this->mapProperty([
-                    'name' => '',
-                    'price' => '',
-                    'url' => '',
-                ], $value);
-            }
+        if (is_array($items) === false) {
+            return $items;
         }
 
-        return $values;
+        // Check if it is an array with one dimension
+        if (is_array(reset($items)) === false) {
+            return $this->getNestedContext(Offer::class, $items);
+        }
+
+        // Process multi dimensional array
+        return array_map(function ($item) {
+            return $this->getNestedContext(Offer::class, $item);
+        }, $items);
     }
 }

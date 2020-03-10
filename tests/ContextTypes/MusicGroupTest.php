@@ -6,7 +6,6 @@ use JsonLd\Test\TestCase;
 
 class MusicGroupTest extends TestCase
 {
-
     protected $class = \JsonLd\ContextTypes\MusicGroup::class;
 
     protected $attributes = [
@@ -61,5 +60,4 @@ class MusicGroupTest extends TestCase
             ]
         ], $context->getProperty('track'));
     }
-
 }

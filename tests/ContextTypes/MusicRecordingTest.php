@@ -6,7 +6,6 @@ use JsonLd\Test\TestCase;
 
 class MusicRecordingTest extends TestCase
 {
-
     protected $class = \JsonLd\ContextTypes\MusicRecording::class;
 
     protected $attributes = [
@@ -86,5 +85,4 @@ class MusicRecordingTest extends TestCase
             'description' => 'Lorem ipsum dolor sit amet',
         ], $context->getProperty('inAlbum'));
     }
-
 }

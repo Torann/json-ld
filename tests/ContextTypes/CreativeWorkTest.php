@@ -17,10 +17,8 @@ class CreativeWorkTest extends TestCase
             'ratingCount' => 4,
         ],
         'author' => [
-            ['@type' => 'Person',
-             'name' => 'Joe Joe'],
-            ['@type' => 'Person',
-             'name' => 'Jammy Joe'],
+            ['@type' => 'Person', 'name' => 'Joe Joe'],
+            ['@type' => 'Person', 'name' => 'Jammy Joe'],
         ],
         'creator' => [
             'name' => 'Joe Joe',

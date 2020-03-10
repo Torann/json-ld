@@ -42,5 +42,4 @@ class PlaceTest extends TestCase
                 'reviewRating' => 10,
             ]);
     }
-
 }

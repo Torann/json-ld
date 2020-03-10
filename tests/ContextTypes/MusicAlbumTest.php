@@ -6,7 +6,6 @@ use JsonLd\Test\TestCase;
 
 class MusicAlbumTest extends TestCase
 {
-
     protected $class = \JsonLd\ContextTypes\MusicAlbum::class;
 
     protected $attributes = [
@@ -107,5 +106,4 @@ class MusicAlbumTest extends TestCase
 
         $this->assertEquals('voluptas nulla pariatu', $context->getProperty('byArtist'));
     }
-
 }

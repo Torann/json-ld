@@ -40,12 +40,12 @@ class EventTest extends TestCase
 
         $this->assertEquals([
             [
+                '@type' => 'Offer',
                 'name' => 'Beer',
                 'price' => '4.99'
             ]
         ], $context->getProperty('offers'));
     }
-
 
     /**
      * @test

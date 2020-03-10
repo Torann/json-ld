@@ -15,7 +15,6 @@ class PersonSimpleAddressTest extends TestCase
         ],
         'additionalName' => 'phpUnit hacker',
         'address' => 'rue de gauche'
-
     ];
 
     /**
@@ -60,6 +59,4 @@ class PersonSimpleAddressTest extends TestCase
 
         $this->assertEquals('rue de gauche', $context->getProperty('address'));
     }
-
-
 }

@@ -41,14 +41,14 @@ class ArticleTest extends TestCase
         'inLanguage' => 'en',
         'commentCount' => 2,
         'comment' => [
-                ['@type' => 'Comment',
-                 'author' => ['@type' => 'Person', 'name' => 'Joe Joe'],
-                 'text' => 'first comment',
-                 'dateCreated' => '2018-06-14T21:40:00+02:00'],
-                ['@type' => 'Comment',
-                 'author' => ['@type' => 'Person', 'name' => 'Joe Bis'],
-                 'text' => 'second comment',
-                 'dateCreated' => '2018-06-14T23:23:00+02:00']
+            ['@type' => 'Comment',
+                'author' => ['@type' => 'Person', 'name' => 'Joe Joe'],
+                'text' => 'first comment',
+                'dateCreated' => '2018-06-14T21:40:00+02:00'],
+            ['@type' => 'Comment',
+                'author' => ['@type' => 'Person', 'name' => 'Joe Bis'],
+                'text' => 'second comment',
+                'dateCreated' => '2018-06-14T23:23:00+02:00']
         ],
         'dateCreated' => '2013-10-04T00:00',
         'dateModified' => '2013-10-04T00:00',

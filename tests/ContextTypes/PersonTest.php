@@ -32,7 +32,7 @@ class PersonTest extends TestCase
         'email' => 'toto@yoyo.fr',
         'familyName' => 'Dupondt',
         'faxNumber' => '0000000000',
-        'follows' => [ 'name' => 'strange follower' ],
+        'follows' => ['name' => 'strange follower'],
         'givenName' => 'Doctor',
         'homeLocation' => [
             'name' => 'Fluff Hut',
@@ -41,15 +41,16 @@ class PersonTest extends TestCase
                 'addressLocality' => 'Hamden',
                 'addressRegion' => 'CT',
                 'postalCode' => '06514',
-          ],
+            ],
         ],
         'jobTitle' => 'tester',
-        'parent' => [ 'name' => 'daddy' ],
+        'parent' => ['name' => 'daddy'],
         'telephone' => '+330102030405'
 
     ];
 
-    public function test_should_have_properties() {
+    public function test_should_have_properties()
+    {
 
         $this->assertPropertyEquals('name', 'Anonymous tester');
 
