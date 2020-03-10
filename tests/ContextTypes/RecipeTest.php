@@ -6,7 +6,6 @@ use JsonLd\Test\TestCase;
 
 class RecipeTest extends TestCase
 {
-
     protected $class = \JsonLd\ContextTypes\Recipe::class;
 
     protected $attributes = [
@@ -63,7 +62,7 @@ class RecipeTest extends TestCase
     /**
      * @test
      */
-    public function shouldHaveUrl()
+    public function shouldHaveValidRecipe()
     {
         $context = $this->make();
 
@@ -78,15 +77,12 @@ class RecipeTest extends TestCase
         $this->assertEquals('2g fiber', $nutrition['fiberContent']);
         $this->assertEquals('428 calories', $nutrition['calories']);
 
-        $this->assertEquals(
-            [
-                '@type' => 'AggregateRating',
-                'ratingValue' => 5,
-                'reviewCount' => 5,
-                'ratingCount' => 3,
-            ],
-            $context->getProperty('aggregateRating')
-        );
+        $this->assertEquals([
+            '@type' => 'AggregateRating',
+            'ratingValue' => 5,
+            'reviewCount' => 5,
+            'ratingCount' => 3,
+        ], $context->getProperty('aggregateRating'));
 
         $review = $context->getProperty('review');
         $this->assertEquals('Review', $review[1]['@type']);
