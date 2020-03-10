@@ -36,8 +36,6 @@ class CreativeWork extends Thing
     ];
 
     /**
-     * Constructor. Merges extendedStructure up
-     *
      * @param array $attributes
      * @param array $extendedStructure
      */
@@ -51,19 +49,19 @@ class CreativeWork extends Thing
     /**
      * Set the article body attribute.
      *
-     * @param string $txt
+     * @param string $text
      *
-     * @return array
+     * @return string
      */
-    protected function setTextAttribute($txt)
+    protected function setTextAttribute(string $text): string
     {
-        return $this->truncate($txt, 260);
+        return $this->truncate($text, 260);
     }
 
     /**
      * Set the authors
      *
-     * @param array $items
+     * @param mixed $items
      *
      * @return array
      */
@@ -81,7 +79,7 @@ class CreativeWork extends Thing
     /**
      * Set the comments
      *
-     * @param array $items
+     * @param mixed $items
      *
      * @return array
      */
@@ -99,7 +97,7 @@ class CreativeWork extends Thing
     /**
      * Set the reviews
      *
-     * @param array $items
+     * @param mixed $items
      *
      * @return array
      */

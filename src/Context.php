@@ -35,9 +35,9 @@ class Context
      *
      * @return static
      */
-    public static function create($context, array $data = [])
+    public static function create($context, array $data = []): self
     {
-        return new static($context, $data);
+        return new self($context, $data);
     }
 
     /**
@@ -45,7 +45,7 @@ class Context
      *
      * @return array
      */
-    public function getProperties()
+    public function getProperties(): array
     {
         return array_filter($this->context->getProperties());
     }
@@ -55,11 +55,13 @@ class Context
      *
      * @return string
      */
-    public function generate()
+    public function generate(): string
     {
         $properties = $this->getProperties();
 
-        return $properties ? "<script type=\"application/ld+json\">" . json_encode($properties, JSON_HEX_APOS | JSON_UNESCAPED_UNICODE) . "</script>" : '';
+        return $properties
+            ? "<script type=\"application/ld+json\">" . json_encode($properties, JSON_HEX_APOS | JSON_UNESCAPED_UNICODE) . "</script>"
+            : '';
     }
 
     /**
@@ -70,7 +72,7 @@ class Context
      * @return string|null
      * @throws InvalidArgumentException
      */
-    protected function getContextTypeClass($name)
+    protected function getContextTypeClass($name): ?string
     {
         // Check for custom context type
         if (class_exists($name)) {
@@ -110,7 +112,7 @@ class Context
      *
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->generate();
     }

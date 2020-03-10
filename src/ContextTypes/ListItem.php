@@ -21,7 +21,7 @@ class ListItem extends AbstractContext
      *
      * @return array
      */
-    protected function setItemAttribute($item)
+    protected function setItemAttribute(array $item): array
     {
         return [
             '@id' => $this->getArrValue($item, 'url'),

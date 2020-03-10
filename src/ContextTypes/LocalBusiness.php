@@ -29,9 +29,9 @@ class LocalBusiness extends AbstractContext
     /**
      * Set the opening hours of the business.
      *
-     * @param array $items
+     * @param mixed $items
      *
-     * @return array
+     * @return mixed
      */
     protected function setOpeningHoursAttribute($items)
     {

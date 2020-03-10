@@ -23,8 +23,6 @@ class Thing extends AbstractContext
     ];
 
     /**
-     * Thing constructor. Merges extendedStructure up
-     *
      * @param array $attributes
      * @param array $extendedStructure
      */
@@ -40,9 +38,9 @@ class Thing extends AbstractContext
      *
      * @param string $type
      *
-     * @return array
+     * @return string
      */
-    protected function setTypeAttribute($type)
+    protected function setTypeAttribute(string $type): string
     {
         // TODO: Add type validation
         return $type;

@@ -27,12 +27,12 @@ class NewsArticle extends AbstractContext
     /**
      * Set the description attribute.
      *
-     * @param string $txt
+     * @param string $text
      *
      * @return string
      */
-    protected function setDescriptionAttribute($txt)
+    protected function setDescriptionAttribute(string $text): string
     {
-        return $this->truncate($txt, 260);
+        return $this->truncate($text, 260);
     }
 }

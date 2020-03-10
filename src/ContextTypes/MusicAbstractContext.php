@@ -38,7 +38,7 @@ abstract class MusicAbstractContext extends AbstractContext
     /**
      * Set artist attribute
      *
-     * @param array|string $items
+     * @param mixed $items
      *
      * @return array
      */
@@ -62,7 +62,7 @@ abstract class MusicAbstractContext extends AbstractContext
     /**
      * Set the tracks for a music group
      *
-     * @param array $items
+     * @param mixed $items
      *
      * @return array
      */
@@ -80,7 +80,7 @@ abstract class MusicAbstractContext extends AbstractContext
     /**
      * Set image attribute
      *
-     * @param array|string $item
+     * @param mixed $item
      *
      * @return array
      */

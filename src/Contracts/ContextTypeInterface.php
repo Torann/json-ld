@@ -7,5 +7,5 @@ interface ContextTypeInterface
     /**
      * @return array
      */
-    public function getProperties();
+    public function getProperties(): array;
 }

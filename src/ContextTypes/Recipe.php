@@ -34,9 +34,9 @@ class Recipe extends AbstractContext
     /**
      * Set the reviews
      *
-     * @param array $items
+     * @param mixed $items
      *
-     * @return array
+     * @return mixed
      */
     protected function setReviewAttribute($items)
     {

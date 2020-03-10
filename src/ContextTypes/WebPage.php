@@ -19,7 +19,7 @@ class WebPage extends AbstractContext
      *
      * @param string $url
      *
-     * @return array
+     * @return null
      */
     protected function setUrlAttribute($url)
     {

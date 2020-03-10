@@ -25,8 +25,6 @@ class Book extends CreativeWork
     ];
 
     /**
-     * Constructor. Merges extendedStructure up
-     *
      * @param array $attributes
      * @param array $extendedStructure
      */

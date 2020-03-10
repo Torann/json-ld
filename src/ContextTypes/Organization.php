@@ -17,8 +17,6 @@ class Organization extends Thing
     ];
 
     /**
-     * Organization constructor. Merges extendedStructure up
-     *
      * @param array $attributes
      * @param array $extendedStructure
      */
@@ -32,7 +30,7 @@ class Organization extends Thing
     /**
      * Set the contactPoints
      *
-     * @param array $items
+     * @param mixed $items
      *
      * @return array
      */
@@ -42,7 +40,7 @@ class Organization extends Thing
             return $items;
         }
 
-        //Check if it is an array with one dimension
+        // Check if it is an array with one dimension
         if (is_array(reset($items)) === false) {
             return $this->getNestedContext(ContactPoint::class, $items);
         }

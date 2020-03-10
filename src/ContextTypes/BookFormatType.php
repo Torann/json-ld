@@ -16,14 +16,14 @@ class BookFormatType extends Enumeration
      *
      * @see http://schema.org/AudiobookFormat
      */
-    const AudiobookFormat = 'http://schema.org/AudiobookFormat';
+    const AUDIOBOOK = 'http://schema.org/AudiobookFormat';
 
     /**
      * Book format: Ebook.
      *
      * @see http://schema.org/EBook
      */
-    const EBook = 'http://schema.org/EBook';
+    const EBOOK = 'http://schema.org/EBook';
 
     /**
      * Book format: GraphicNovel. May represent a bound collection of
@@ -31,21 +31,21 @@ class BookFormatType extends Enumeration
      *
      * @see http://schema.org/GraphicNovel
      */
-    const GraphicNovel = "https://schema.org/GraphicNovel";
+    const GRAPHIC_NOVEL = "https://schema.org/GraphicNovel";
 
     /**
      * Book format: Hardcover.
      *
      * @see http://schema.org/Hardcover
      */
-    const Hardcover = 'http://schema.org/Hardcover';
+    const HARDCOVER = 'http://schema.org/Hardcover';
 
     /**
      * Book format: Paperback.
      *
      * @see http://schema.org/Paperback
      */
-    const Paperback = 'http://schema.org/Paperback';
+    const PAPERBACK = 'http://schema.org/Paperback';
 
     /**
      * Property structure

@@ -3,15 +3,21 @@
 namespace JsonLd\Test;
 
 use Mockery;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
-class TestCase extends PHPUnit_Framework_TestCase
+class TestCase extends PHPUnitTestCase
 {
+    /**
+     * @var string
+     */
     protected $class;
 
+    /**
+     * @var array
+     */
     protected $attributes = [];
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }
@@ -25,8 +31,11 @@ class TestCase extends PHPUnit_Framework_TestCase
     {
         $context = $this->make();
 
-        $assertMessage = 'asserting \''.$this->class.'\' property \''.$property.'\'';
-        $this->assertEquals($expectedValue, $context->getProperty($property), $assertMessage);
+        $this->assertEquals(
+            $expectedValue,
+            $context->getProperty($property),
+            "asserting '{$this->class}' property '{$property}'"
+        );
     }
 
 
@@ -44,10 +53,11 @@ class TestCase extends PHPUnit_Framework_TestCase
         $properties = $context->getProperties();
 
         $this->assertNotNull($html);
+
         foreach ($properties as $k => $v) {
             if ($v != null) {
-                $this->assertContains(json_encode($k), $html);
-                $this->assertContains(json_encode($v), $html);
+                $this->assertStringContainsString(json_encode($k), $html);
+                $this->assertStringContainsString(json_encode($v), $html);
             }
         }
     }

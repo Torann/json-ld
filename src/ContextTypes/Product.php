@@ -32,13 +32,12 @@ class Product extends AbstractContext
         'weight' => QuantitativeValue::class,
     ];
 
-
     /**
      * Set isSimilarTo attributes.
      *
      * @param mixed $values
      *
-     * @return array
+     * @return mixed
      */
     protected function setIsSimilarToAttribute($values)
     {

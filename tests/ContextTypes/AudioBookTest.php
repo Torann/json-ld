@@ -13,7 +13,7 @@ class AudiobookTest extends TestCase
         'isbn' => '00000000',
         'abridged' => false,
         'bookEdition' => 'Library edition',
-        'bookFormat' => \JsonLd\ContextTypes\BookFormatType::Paperback,
+        'bookFormat' => \JsonLd\ContextTypes\BookFormatType::PAPERBACK,
         'transcript' => 'Some text and other things',
         'numberOfPages' => '1234',
         'datePublished' => '2013-10-04T00:00',

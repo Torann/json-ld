@@ -16,8 +16,6 @@ class Place extends Thing
     ];
 
     /**
-     * Constructor. Merges extendedStructure up
-     *
      * @param array $attributes
      * @param array $extendedStructure
      */
@@ -25,5 +23,4 @@ class Place extends Thing
     {
         parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
     }
-
 }

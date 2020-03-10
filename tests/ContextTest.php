@@ -3,10 +3,15 @@
 namespace JsonLd\Test;
 
 use Mockery;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
-class ContextTest extends PHPUnit_Framework_TestCase
+class ContextTest extends PHPUnitTestCase
 {
+    public function tearDown(): void
+    {
+        Mockery::close();
+    }
+
     /**
      * @test
      */
@@ -73,10 +78,5 @@ class ContextTest extends PHPUnit_Framework_TestCase
         $context = \JsonLd\Context::create('event', ['name' => 'Foo Bar']);
 
         $this->assertEquals('<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Event","name":"Foo Bar"}</script>', $context->generate());
-    }
-
-    public function tearDown()
-    {
-        Mockery::close();
     }
 }

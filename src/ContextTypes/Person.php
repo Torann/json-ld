@@ -40,8 +40,6 @@ class Person extends Thing
     ];
 
     /**
-     * Constructor. Merges extendedStructure up
-     *
      * @param array $attributes
      * @param array $extendedStructure
      */
@@ -53,9 +51,9 @@ class Person extends Thing
     /**
      * Set the address
      *
-     * @param array $items
+     * @param mixed $items
      *
-     * @return array
+     * @return mixed
      */
     protected function setAddressAttribute($items)
     {

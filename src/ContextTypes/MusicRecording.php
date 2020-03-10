@@ -25,7 +25,7 @@ class MusicRecording extends MusicAbstractContext
     /**
      * Set in album attribute
      *
-     * @param array|string $items
+     * @param mixed $items
      *
      * @return array
      */
@@ -49,7 +49,7 @@ class MusicRecording extends MusicAbstractContext
     /**
      * Set in playlist attribute
      *
-     * @param array|string $item
+     * @param mixed $item
      *
      * @return array
      */

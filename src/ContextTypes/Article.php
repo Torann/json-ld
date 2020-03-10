@@ -23,8 +23,6 @@ class Article extends CreativeWork
     ];
 
     /**
-     * Constructor. Merges extendedStructure up
-     *
      * @param array $attributes
      * @param array $extendedStructure
      */
@@ -36,38 +34,34 @@ class Article extends CreativeWork
     }
 
     /**
-     * Set the description attribute.
-     *
-     * @param string $txt
-     *
-     * @return string
+     * {@inheritDoc}
      */
-    protected function setDescriptionAttribute($txt)
+    protected function setTextAttribute(string $text): string
     {
-        return $this->truncate($txt, 260);
+        return $this->truncate($text, 260);
     }
 
     /**
-     * Set the text attribute.
+     * Set the description attribute.
      *
-     * @param string $txt
+     * @param string $text
      *
      * @return string
      */
-    protected function setTextAttribute($txt)
+    protected function setDescriptionAttribute(string $text): string
     {
-        return $this->truncate($txt, 260);
+        return $this->truncate($text, 260);
     }
 
     /**
      * Set the article body attribute.
      *
-     * @param string $txt
+     * @param string $text
      *
      * @return string
      */
-    protected function setArticleBodyAttribute($txt)
+    protected function setArticleBodyAttribute(string $text): string
     {
-        return $this->truncate($txt, 260);
+        return $this->truncate($text, 260);
     }
 }
