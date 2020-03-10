@@ -32,8 +32,10 @@ $ composer require torann/json-ld
 ## Context Types
 
 - article
+- audiobook
 - beach
 - blog_posting
+- book
 - breadcrumb_list
 - contact_point
 - corporation
@@ -45,6 +47,7 @@ $ composer require torann/json-ld
 - invoice
 - list_item
 - local_business
+- media_object
 - music_album
 - music_group
 - music_playlist
@@ -59,11 +62,14 @@ $ composer require torann/json-ld
 - price_specification
 - product
 - rating
+- recipe
 - review
+- sculpture
 - search_box
 - thing
 - video_object
 - web_page
+- web_site
 
 ## Examples
 
@@ -123,7 +129,6 @@ $context = \JsonLd\Context::create('news_article', [
 
 echo $context; // Will output the script tag
 ```
-
 
 ### Using the JSON-LD in a Laracasts Presenter
 
@@ -220,38 +225,3 @@ $context = \JsonLd\Context::create(\App\JsonLd\FooBar::class, [
 
 echo $context; // Will output the script tag
 ```
-
-## Change Log
-
- **v0.0.7**
-
- - Add corporation
- - Add the ability for custom context types
- - Fix file structure to adhere to PSR-4 file structure
-
- **v0.0.6**
-
- - Code cleanup
-
- **v0.0.5**
-
- - Add duration
- - Update place, review, and local_business
-
- **v0.0.3**
-
- - Add product
- - Add order
- - Add price specification
- - Add invoice
- - Add context
-
- **v0.0.2**
-
- - Add breadcrumbs
- - Add search box
- - Add a few docs
-
-**v0.0.1**
-
- - First release
