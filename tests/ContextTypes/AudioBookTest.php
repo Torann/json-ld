@@ -4,9 +4,9 @@ namespace JsonLd\Test\ContextTypes;
 
 use JsonLd\Test\TestCase;
 
-class AudioBookTest extends TestCase
+class AudiobookTest extends TestCase
 {
-    protected $class = \JsonLd\ContextTypes\AudioBook::class;
+    protected $class = \JsonLd\ContextTypes\Audiobook::class;
 
     protected $attributes = [
         'name' => 'The Title of Book',
