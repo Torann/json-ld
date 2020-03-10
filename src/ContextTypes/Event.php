@@ -34,13 +34,14 @@ class Event extends Thing
     /**
      * Set offers attributes.
      *
-     * @param  mixed $values
+     * @param mixed $values
+     *
      * @return array
      */
     protected function setOffersAttribute($values)
     {
         if (is_array($values)) {
-            foreach($values as $key => $value) {
+            foreach ($values as $key => $value) {
                 $values[$key] = $this->mapProperty([
                     'name' => '',
                     'price' => '',

@@ -59,7 +59,7 @@ class Context
     {
         $properties = $this->getProperties();
 
-        return $properties ? "<script type=\"application/ld+json\">" . json_encode($properties,JSON_HEX_APOS | JSON_UNESCAPED_UNICODE) . "</script>" : '';
+        return $properties ? "<script type=\"application/ld+json\">" . json_encode($properties, JSON_HEX_APOS | JSON_UNESCAPED_UNICODE) . "</script>" : '';
     }
 
     /**

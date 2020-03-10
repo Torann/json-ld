@@ -16,12 +16,13 @@ class BreadcrumbList extends AbstractContext
     /**
      * Set the canonical URL of the article page.
      *
-     * @param  array $items
+     * @param array $items
+     *
      * @return array
      */
     protected function setItemListElementAttribute($items)
     {
-        foreach($items as $pos=>$item) {
+        foreach ($items as $pos => $item) {
             $items[$pos] = $this->getNestedContext(ListItem::class, [
                 'position' => $pos + 1,
                 'item' => $item

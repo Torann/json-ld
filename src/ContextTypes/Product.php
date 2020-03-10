@@ -1,4 +1,5 @@
 <?php
+
 namespace JsonLd\ContextTypes;
 
 class Product extends AbstractContext
@@ -35,7 +36,8 @@ class Product extends AbstractContext
     /**
      * Set isSimilarTo attributes.
      *
-     * @param  mixed $values
+     * @param mixed $values
+     *
      * @return array
      */
     protected function setIsSimilarToAttribute($values)

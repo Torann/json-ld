@@ -2,11 +2,13 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Person
+ */
 class Person extends Thing
 {
     /**
-     * Property structure
-     * reference: https://schema.org/Person (alphabetical order)
+     * Property structure (alphabetical order)
      *
      * @var array
      */
@@ -52,6 +54,7 @@ class Person extends Thing
      * Set the address
      *
      * @param array $items
+     *
      * @return array
      */
     protected function setAddressAttribute($items)
@@ -59,7 +62,7 @@ class Person extends Thing
         if (is_array($items) === false) {
             return $items;
         }
-        
+
         return $this->getNestedContext(PostalAddress::class, $items);
     }
 }

@@ -4,7 +4,6 @@ namespace JsonLd\ContextTypes;
 
 class MusicGroup extends MusicAbstractContext
 {
-
     /**
      * Property structure
      *

@@ -1,5 +1,7 @@
 <?php
+
 namespace JsonLd\ContextTypes;
+
 class Offer extends AbstractContext
 {
     /**

@@ -27,7 +27,8 @@ class SearchBox extends AbstractContext
     /**
      * Set potential action.
      *
-     * @param  array $properties
+     * @param array $properties
+     *
      * @return array
      */
     protected function setPotentialActionAttribute($properties)

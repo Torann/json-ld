@@ -2,7 +2,7 @@
 
 namespace JsonLd\ContextTypes;
 
-class Sculpture extends CreativeWork 
+class Sculpture extends CreativeWork
 {
     /**
      * Property structure.

@@ -2,11 +2,13 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/CreativeWork
+ */
 class CreativeWork extends Thing
 {
     /**
      * Property structure
-     * reference: https://schema.org/CreativeWork (alphabetical order)
      *
      * @var array
      */
@@ -49,7 +51,8 @@ class CreativeWork extends Thing
     /**
      * Set the article body attribute.
      *
-     * @param  string $txt
+     * @param string $txt
+     *
      * @return array
      */
     protected function setTextAttribute($txt)
@@ -61,6 +64,7 @@ class CreativeWork extends Thing
      * Set the authors
      *
      * @param array $items
+     *
      * @return array
      */
     protected function setAuthorAttribute($items)
@@ -78,6 +82,7 @@ class CreativeWork extends Thing
      * Set the comments
      *
      * @param array $items
+     *
      * @return array
      */
     protected function setCommentAttribute($items)
@@ -95,6 +100,7 @@ class CreativeWork extends Thing
      * Set the reviews
      *
      * @param array $items
+     *
      * @return array
      */
     protected function setReviewAttribute($items)

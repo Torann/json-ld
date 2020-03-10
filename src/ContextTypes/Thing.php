@@ -2,11 +2,13 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Thing
+ */
 class Thing extends AbstractContext
 {
     /**
      * Property structure
-     * reference: https://schema.org/Thing (alphabetical order)
      *
      * @var array
      */
@@ -29,13 +31,15 @@ class Thing extends AbstractContext
     public function __construct(array $attributes, array $extendedStructure = [])
     {
         $this->structure = array_merge($this->structure, $extendedStructure);
+
         parent::__construct($attributes);
     }
 
     /**
      * Set type attribute.
      *
-     * @param  string $type
+     * @param string $type
+     *
      * @return array
      */
     protected function setTypeAttribute($type)

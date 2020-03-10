@@ -17,7 +17,8 @@ class ListItem extends AbstractContext
     /**
      * Set item in list.
      *
-     * @param  array $item
+     * @param array $item
+     *
      * @return array
      */
     protected function setItemAttribute($item)

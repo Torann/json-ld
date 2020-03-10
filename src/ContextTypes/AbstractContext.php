@@ -102,6 +102,7 @@ abstract class AbstractContext implements ContextTypeInterface
      * Set sameAs Attribute
      *
      * @param mixed $value
+     *
      * @return mixed
      */
     protected function setSameAsAttribute($value)
@@ -122,8 +123,9 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Get an item from properties.
      *
-     * @param  string  $key
-     * @param  mixed   $default
+     * @param string $key
+     * @param mixed  $default
+     *
      * @return mixed
      */
     public function getProperty($key, $default = null)
@@ -134,9 +136,10 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Set property value in attributes.
      *
-     * @param  string $key
-     * @param  mixed  $property
-     * @param  mixed  $value
+     * @param string $key
+     * @param mixed  $property
+     * @param mixed  $value
+     *
      * @return mixed
      */
     protected function setProperty($key, $property, $value = null)
@@ -179,7 +182,8 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Set context type.
      *
-     * @param  string $type
+     * @param string $type
+     *
      * @return void
      */
     protected function setType($type)
@@ -190,8 +194,9 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Get nested context array.
      *
-     * @param  string $class
-     * @param  array  $attributes
+     * @param string $class
+     * @param array  $attributes
+     *
      * @return array
      */
     protected function getNestedContext($class, $attributes = null)
@@ -209,16 +214,17 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Filter nested context array.
      *
-     * @param  array $properties
+     * @param array $properties
+     *
      * @return array
      */
     protected function filterNestedContext(array $properties = [])
     {
-        $func = function($value, $key) {
+        $func = function ($value, $key) {
             return ($value && $key !== '@context');
         };
 
-        if (!defined('ARRAY_FILTER_USE_BOTH')) {
+        if (defined('ARRAY_FILTER_USE_BOTH') === false) {
             $return = [];
             foreach ($properties as $k => $v) {
                 if (call_user_func($func, $v, $k)) {
@@ -235,7 +241,8 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Determine if a get mutator exists for an attribute.
      *
-     * @param  string $key
+     * @param string $key
+     *
      * @return bool
      */
     protected function hasGetMutator($key)
@@ -246,8 +253,9 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Get the value of an attribute using its mutator.
      *
-     * @param  string $key
-     * @param  mixed  $args
+     * @param string $key
+     * @param mixed  $args
+     *
      * @return mixed
      */
     protected function mutateAttribute($key, $args)
@@ -258,7 +266,8 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Get mutator name from string.
      *
-     * @param  string $value
+     * @param string $value
+     *
      * @return string
      */
     protected function getMutatorName($value)
@@ -271,8 +280,9 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Get property value from attributes.
      *
-     * @param  array $template
-     * @param  array $props
+     * @param array $template
+     * @param array $props
+     *
      * @return mixed
      */
     protected function mapProperty(array $template = [], $props = [])
@@ -282,7 +292,7 @@ abstract class AbstractContext implements ContextTypeInterface
             return null;
         }
 
-        foreach($template as $key => $value) {
+        foreach ($template as $key => $value) {
             if ($key[0] !== '@') {
                 $template[$key] = $this->getArrValue($props, $key, '');
             }
@@ -294,20 +304,21 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Trim a string to a given number of words
      *
-     * @param  string  $string
-     * @param  int     $limit
-     * @param  string  $pad
-     * @param  string  $break
+     * @param string $string
+     * @param int    $limit
+     * @param string $pad
+     * @param string $break
+     *
      * @return string
      */
     protected function truncate($string, $limit, $pad = '...', $break = ' ')
     {
         // return with no change if string is shorter than $limit
-        if(strlen($string) <= $limit) return $string;
+        if (strlen($string) <= $limit) return $string;
 
         // is $break present between $limit and the end of the string?
-        if(false !== ($breakpoint = strpos($string, $break, $limit))) {
-            if($breakpoint < strlen($string) - 1) {
+        if (false !== ($breakpoint = strpos($string, $break, $limit))) {
+            if ($breakpoint < strlen($string) - 1) {
                 $string = substr($string, 0, $breakpoint) . $pad;
             }
         }
@@ -318,9 +329,10 @@ abstract class AbstractContext implements ContextTypeInterface
     /**
      * Get an item from an array.
      *
-     * @param  array   $array
-     * @param  string  $key
-     * @param  mixed   $default
+     * @param array  $array
+     * @param string $key
+     * @param mixed  $default
+     *
      * @return mixed
      */
     protected function getArrValue(array $array, $key, $default = null)

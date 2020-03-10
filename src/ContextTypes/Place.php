@@ -15,7 +15,6 @@ class Place extends Thing
         'aggregateRating' => AggregateRating::class,
     ];
 
-
     /**
      * Constructor. Merges extendedStructure up
      *

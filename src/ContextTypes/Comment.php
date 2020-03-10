@@ -2,11 +2,13 @@
 
 namespace JsonLd\ContextTypes;
 
-class Comment extends CreativeWork 
+/**
+ * https://schema.org/Comment
+ */
+class Comment extends CreativeWork
 {
     /**
-     * Property structure.
-     * reference: https://schema.org/Comment (alphabetical order)
+     * Property structure
      *
      * @var array
      */

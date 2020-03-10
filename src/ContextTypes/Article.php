@@ -2,11 +2,13 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Article
+ */
 class Article extends CreativeWork
 {
     /**
      * Property structure
-     * reference: https://schema.org/Article (alphabetical order)
      *
      * @var array
      */
@@ -28,14 +30,17 @@ class Article extends CreativeWork
      */
     public function __construct(array $attributes, array $extendedStructure = [])
     {
-        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
+        parent::__construct(
+            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
+        );
     }
 
     /**
      * Set the description attribute.
      *
-     * @param  string $txt
-     * @return array
+     * @param string $txt
+     *
+     * @return string
      */
     protected function setDescriptionAttribute($txt)
     {
@@ -45,8 +50,9 @@ class Article extends CreativeWork
     /**
      * Set the text attribute.
      *
-     * @param  string $txt
-     * @return array
+     * @param string $txt
+     *
+     * @return string
      */
     protected function setTextAttribute($txt)
     {
@@ -56,8 +62,9 @@ class Article extends CreativeWork
     /**
      * Set the article body attribute.
      *
-     * @param  string $txt
-     * @return array
+     * @param string $txt
+     *
+     * @return string
      */
     protected function setArticleBodyAttribute($txt)
     {

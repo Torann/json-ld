@@ -27,8 +27,9 @@ class NewsArticle extends AbstractContext
     /**
      * Set the description attribute.
      *
-     * @param  string $txt
-     * @return array
+     * @param string $txt
+     *
+     * @return string
      */
     protected function setDescriptionAttribute($txt)
     {

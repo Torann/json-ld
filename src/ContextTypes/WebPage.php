@@ -17,7 +17,8 @@ class WebPage extends AbstractContext
     /**
      * Set the canonical URL of the article page.
      *
-     * @param  string $url
+     * @param string $url
+     *
      * @return array
      */
     protected function setUrlAttribute($url)

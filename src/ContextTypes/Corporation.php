@@ -21,7 +21,8 @@ class Corporation extends Organization
      */
     public function __construct(array $attributes, array $extendedStructure = [])
     {
-        parent::__construct($attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure));
+        parent::__construct(
+            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
+        );
     }
-
 }
