@@ -58,4 +58,25 @@ class Product extends AbstractContext
 
         return $values;
     }
+
+
+
+    /**
+     * Set the reviews
+     *
+     * @param array $items
+     *
+     * @return array
+     */
+    protected function setReviewAttribute($items)
+    {
+        if (is_array($items) === false) {
+            return $items;
+        }
+
+        return array_map(function ($item) {
+            return $this->getNestedContext(Review::class, $item);
+        }, $items);
+    }
+
 }
