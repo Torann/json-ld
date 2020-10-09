@@ -2,29 +2,33 @@
 
 namespace JsonLd\ContextTypes;
 
-class LocalBusiness extends AbstractContext
+class LocalBusiness extends Organization
 {
     /**
      * Property structure
      *
      * @var array
      */
-    protected $structure = [
-        'name' => null,
-        'description' => null,
-        'image' => null,
-        'telephone' => null,
-        'email' => null,
+    protected $extendedStructure = [
         'openingHours' => null,
-        'address' => PostalAddress::class,
-        'geo' => GeoCoordinates::class,
-        'review' => Review::class,
-        'aggregateRating' => AggregateRating::class,
-        'url' => null,
         'priceRange' => null,
-        'areaServed' => null,
-        'hasMap' => null,
     ];
+
+    /**
+     * Constructor. Merges extendedStructure up
+     *
+     * @param array $attributes
+     * @param array $extendedStructure
+     */
+    public function __construct(array $attributes, array $extendedStructure = [])
+    {
+        $place = new Place([]);
+        $extendedStructure = array_merge($extendedStructure, $place->structure);
+
+        parent::__construct(
+            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
+        );
+    }
 
     /**
      * Set the opening hours of the business.
