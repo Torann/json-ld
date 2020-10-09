@@ -14,6 +14,7 @@ class Organization extends Thing
         'logo' => ImageObject::class,
         'contactPoint' => ContactPoint::class,
         'email' => null,
+        'telephone' => null,
     ];
 
     /**
