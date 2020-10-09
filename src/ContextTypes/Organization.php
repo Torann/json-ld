@@ -14,6 +14,10 @@ class Organization extends Thing
         'logo' => ImageObject::class,
         'contactPoint' => ContactPoint::class,
         'email' => null,
+        'telephone' => null,
+        'review' => Review::class,
+        'aggregateRating' => AggregateRating::class,
+        'areaServed' => null,
     ];
 
     /**

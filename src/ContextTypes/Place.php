@@ -13,6 +13,8 @@ class Place extends Thing
         'address' => PostalAddress::class,
         'review' => Review::class,
         'aggregateRating' => AggregateRating::class,
+        'geo' => GeoCoordinates::class,
+        'hasMap' => null,
     ];
 
     /**
