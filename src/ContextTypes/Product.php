@@ -18,7 +18,7 @@ class Product extends Thing
         'productID' => null,
         'review' => Review::class,
         'aggregateRating' => AggregateRating::class,
-        'offers' => Offer::class,
+        'offers' => [Offer::class, AggregateOffer::class],
         'gtin8' => null,
         'gtin13' => null,
         'gtin14' => null,

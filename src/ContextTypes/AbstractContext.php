@@ -181,11 +181,6 @@ abstract class AbstractContext implements ContextTypeInterface
             return $nested_context;
         }
 
-        // Map properties to object
-        if ($property !== null && is_array($property) && is_array($value)) {
-            return $this->mapProperty($property, $value);
-        }
-
         // Set value
         return $value;
     }
