@@ -10,10 +10,7 @@ class MusicPlaylist extends MusicAbstractContext
      * @var array
      */
     protected $structure = [
-        '@id' => null,
-        'url' => null,
-        'name' => null,
         'numTracks' => null,
-        'track' => null,
+        'track' => MusicRecording::class,
     ];
 }

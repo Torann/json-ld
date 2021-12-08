@@ -32,29 +32,4 @@ class Product extends AbstractContext
         'weight' => QuantitativeValue::class,
     ];
 
-    /**
-     * Set isSimilarTo attributes.
-     *
-     * @param mixed $values
-     *
-     * @return mixed
-     */
-    protected function setIsSimilarToAttribute($values)
-    {
-        if (is_array($values)) {
-            foreach ($values as $key => $value) {
-                $product = new self($value);
-
-                $properties = $product->getProperties();
-
-                unset($properties['@context']);
-
-                $properties = array_filter($properties, 'strlen');
-
-                $values[$key] = $properties;
-            }
-        }
-
-        return $values;
-    }
 }
