@@ -9,7 +9,7 @@ class Event extends Thing
      *
      * @var array
      */
-    protected $extendedStructure = [
+    protected $structure = [
         'name' => null,
         'startDate' => null,
         'endDate' => null,
@@ -17,17 +17,6 @@ class Event extends Thing
         'offers' => [],
         'location' => Place::class,
     ];
-
-    /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
 
     /**
      * Set offers attributes.

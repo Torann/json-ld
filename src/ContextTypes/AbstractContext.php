@@ -32,20 +32,6 @@ abstract class AbstractContext implements ContextTypeInterface
     ];
 
     /**
-     * Property structure
-     *
-     * @var array
-     */
-    protected $extendStructure = [];
-
-    /**
-     * Property structure, will be merged up for objects extending Thing
-     *
-     * @var array
-     */
-    private $extendedStructure = [];
-
-    /**
      * Create a new context type instance
      *
      * @param array $attributes
@@ -55,6 +41,11 @@ abstract class AbstractContext implements ContextTypeInterface
         // Set type
         $path = explode('\\', get_class($this));
         $this->type = end($path);
+
+        $class = get_called_class();
+        while ($class = get_parent_class($class)) {
+            $this->structure += get_class_vars($class)['structure'];
+        }
 
         // Set attributes
         $this->fill($attributes);
@@ -89,7 +80,7 @@ abstract class AbstractContext implements ContextTypeInterface
             '@context' => 'http://schema.org',
             '@type' => $this->type,
             'sameAs' => null
-        ], $this->structure, $this->extendStructure);
+        ], $this->structure);
 
         // Set properties from attributes
         foreach ($properties as $key => $property) {

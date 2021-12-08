@@ -15,7 +15,7 @@ class Book extends CreativeWork
      *
      * @var array
      */
-    protected $extendedStructure = [
+    protected $structure = [
         'abridged' => null,
         'bookEdition' => null,
         'bookFormat' => BookFormatType::class,
@@ -24,14 +24,4 @@ class Book extends CreativeWork
         'numberOfPages' => null,
     ];
 
-    /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
 }

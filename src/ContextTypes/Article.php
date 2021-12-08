@@ -12,7 +12,7 @@ class Article extends CreativeWork
      *
      * @var array
      */
-    private $extendedStructure = [
+    protected $structure = [
         'articleBody' => null,
         'articleSection' => null,
         'pageEnd' => null,
@@ -21,17 +21,6 @@ class Article extends CreativeWork
         'wordCount' => null,
         'mainEntityOfPage' => WebPage::class,
     ];
-
-    /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
 
     /**
      * {@inheritDoc}

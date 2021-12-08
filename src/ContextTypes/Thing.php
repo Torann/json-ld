@@ -23,17 +23,6 @@ class Thing extends AbstractContext
     ];
 
     /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        $this->structure = array_merge($this->structure, $extendedStructure);
-
-        parent::__construct($attributes);
-    }
-
-    /**
      * Set type attribute.
      *
      * @param string $type

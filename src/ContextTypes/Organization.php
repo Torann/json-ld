@@ -9,24 +9,13 @@ class Organization extends Thing
      *
      * @var array
      */
-    private $extendedStructure = [
+    protected $structure = [
         'address' => PostalAddress::class,
         'logo' => ImageObject::class,
         'contactPoint' => ContactPoint::class,
         'email' => null,
         'hasPOS' => Place::class,
     ];
-
-    /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
 
     /**
      * Set the contactPoints

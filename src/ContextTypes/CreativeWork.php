@@ -12,7 +12,7 @@ class CreativeWork extends Thing
      *
      * @var array
      */
-    private $extendedStructure = [
+    protected $structure = [
         'about' => Thing::class,
         'aggregateRating' => AggregateRating::class,
         'alternativeHeadline' => null,
@@ -34,17 +34,6 @@ class CreativeWork extends Thing
         'thumbnailUrl' => null,
         'video' => VideoObject::class,
     ];
-
-    /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
 
     /**
      * Set the article body attribute.

@@ -9,7 +9,7 @@ class BlogPosting extends Article
      *
      * @var array
      */
-    protected $extendStructure = [
+    protected $structure = [
         'sharedContent' => CreativeWork::class,
     ];
 }

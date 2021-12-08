@@ -12,21 +12,11 @@ class Audiobook extends Book
      *
      * @var array
      */
-    protected $extendedStructure = [
+    protected $structure = [
         'caption' => MediaObject::class,
         'transcript' => null,
         'duration' => Duration::class,
         'readBy' => Person::class,
     ];
 
-    /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
 }

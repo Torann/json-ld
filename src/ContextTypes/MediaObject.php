@@ -20,7 +20,7 @@ class MediaObject extends CreativeWork
      *
      * @var array
      */
-    protected $extendedStructure = [
+    protected $structure = [
         'associatedArticle' => NewsArticle::class,
         'bitrate' => null,
         'contentSize' => null,
@@ -40,14 +40,4 @@ class MediaObject extends CreativeWork
         'width' => QuantitativeValue::class,
     ];
 
-    /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
 }
