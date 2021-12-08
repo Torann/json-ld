@@ -3,9 +3,9 @@
 namespace JsonLd\ContextTypes;
 
 /**
- * https://schema.org/BookFormatType
+ * https://schema.org/Audiobook
  */
-class Audiobook extends Book
+class Audiobook extends AudioObject
 {
     /**
      * Property structure
@@ -13,8 +13,6 @@ class Audiobook extends Book
      * @var array
      */
     protected $structure = [
-        'caption' => MediaObject::class,
-        'transcript' => null,
         'duration' => Duration::class,
         'readBy' => Person::class,
     ];

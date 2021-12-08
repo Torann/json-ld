@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Event
+ */
 class Event extends Thing
 {
     /**
@@ -10,10 +13,8 @@ class Event extends Thing
      * @var array
      */
     protected $structure = [
-        'name' => null,
         'startDate' => null,
         'endDate' => null,
-        'url' => null,
         'offers' => Offer::class,
         'location' => Place::class,
     ];

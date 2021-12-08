@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class Order extends AbstractContext
+/**
+ * https://schema.org/Order
+ */
+class Order extends Thing
 {
     /**
      * Property structure
@@ -10,13 +13,12 @@ class Order extends AbstractContext
      * @var array
      */
     protected $structure = [
-        'merchant' => Organization::class,
+        'merchant' => Organization::class, //Not an official attribute
         'orderNumber' => null,
         'orderStatus' => null,
-        'priceCurrency' => null,
-        'price' => null,
+        'priceCurrency' => null, //Not an official attribute
+        'price' => null, //Not an official attribute
         'acceptedOffer' => Offer::class,
-        'url' => null,
-        'priceSpecification.name' => null
+        'priceSpecification.name' => null //Not an official attribute
     ];
 }

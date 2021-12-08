@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class QuantitativeValue extends AbstractContext
+/**
+ * https://schema.org/QuantitativeValue
+ */
+class QuantitativeValue extends Thing
 {
     /**
      * Property structure

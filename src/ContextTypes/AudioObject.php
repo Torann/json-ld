@@ -3,9 +3,9 @@
 namespace JsonLd\ContextTypes;
 
 /**
- * https://schema.org/Corporation
+ * https://schema.org/AudioObject
  */
-class Corporation extends Organization
+class AudioObject extends MediaObject
 {
     /**
      * Property structure
@@ -13,7 +13,8 @@ class Corporation extends Organization
      * @var array
      */
     protected $structure = [
-        'tickerSymbol' => null,
+        'caption' => MediaObject::class,
+        'transcript' => null,
     ];
 
 }

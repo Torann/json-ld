@@ -31,6 +31,12 @@ class AggregateRatingTest extends TestCase
         $this->assertEquals(array_merge([
             '@context' => 'http://schema.org',
             '@type' => 'AggregateRating',
+            'name' => '',
+            'alternateName' => '',
+            'description' => '',
+            'image' => '',
+            'mainEntityOfPage' => '',
+            'url' => '',
         ], $this->attributes), $context->getProperties());
     }
 }

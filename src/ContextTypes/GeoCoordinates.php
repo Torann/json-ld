@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class GeoCoordinates extends AbstractContext
+/**
+ * https://schema.org/GeoCoordinates
+ */
+class GeoCoordinates extends Thing
 {
     /**
      * Property structure

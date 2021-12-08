@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class Invoice extends AbstractContext
+/**
+ * https://schema.org/Invoice
+ */
+class Invoice extends Thing
 {
     /**
      * Property structure
@@ -14,7 +17,6 @@ class Invoice extends AbstractContext
         'provider' => Organization::class,
         'paymentDueDate' => null,
         'paymentStatus' => null,
-        'url' => null,
         'referencesOrder' => Order::class
     ];
 }

@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class PriceSpecification extends AbstractContext
+/**
+ * https://schema.org/PriceSpecification
+ */
+class PriceSpecification extends Thing
 {
     /**
      * Property structure

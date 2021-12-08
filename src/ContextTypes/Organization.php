@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Organization
+ */
 class Organization extends Thing
 {
     /**
@@ -15,6 +18,10 @@ class Organization extends Thing
         'contactPoint' => ContactPoint::class,
         'email' => null,
         'hasPOS' => Place::class,
+        'telephone' => null,
+        'review' => Review::class,
+        'aggregateRating' => AggregateRating::class,
+        'areaServed' => null,
     ];
 
 }

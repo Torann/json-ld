@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class WebPage extends AbstractContext
+/**
+ * https://schema.org/WebPage
+ */
+class WebPage extends CreativeWork
 {
     /**
      * Property structure
@@ -10,8 +13,7 @@ class WebPage extends AbstractContext
      * @var array
      */
     protected $structure = [
-        '@id' => null,
-        'url' => null,
+        '@id' => null, //Not an official attribute
     ];
 
     /**

@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class ListItem extends AbstractContext
+/**
+ * https://schema.org/ListItem
+ */
+class ListItem extends Thing
 {
     /**
      * Property structure

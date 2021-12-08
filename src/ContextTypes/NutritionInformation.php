@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class NutritionInformation extends AbstractContext
+/**
+ * https://schema.org/NutritionInformation
+ */
+class NutritionInformation extends Thing
 {
     /**
      * Property structure

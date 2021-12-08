@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class ContactPoint extends AbstractContext
+/**
+ * https://schema.org/ContactPoint
+ */
+class ContactPoint extends Thing
 {
     /**
      * Property structure

@@ -2,16 +2,15 @@
 
 namespace JsonLd\ContextTypes;
 
-class Duration extends AbstractContext
+/**
+ * https://schema.org/Duration
+ */
+class Duration extends Thing
 {
     /**
      * Property structure
      *
      * @var array
      */
-    protected $structure = [
-        'additionalType' => null,
-        'name' => null,
-        'image' => null,
-    ];
+    protected $structure = [];
 }

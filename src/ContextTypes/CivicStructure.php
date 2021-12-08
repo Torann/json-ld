@@ -3,9 +3,9 @@
 namespace JsonLd\ContextTypes;
 
 /**
- * https://schema.org/Corporation
+ * https://schema.org/CivicStructure
  */
-class Corporation extends Organization
+class CivicStructure extends Place
 {
     /**
      * Property structure
@@ -13,7 +13,6 @@ class Corporation extends Organization
      * @var array
      */
     protected $structure = [
-        'tickerSymbol' => null,
+        'openingHours' => null,
     ];
-
 }

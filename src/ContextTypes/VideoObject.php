@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class VideoObject extends AbstractContext
+/**
+ * https://schema.org/VideoObject
+ */
+class VideoObject extends MediaObject
 {
     /**
      * Property structure
@@ -12,20 +15,7 @@ class VideoObject extends AbstractContext
     protected $structure = [
         'actor' => Person::class,
         'director' => Person::class,
-        'associatedArticle' => NewsArticle::class,
-        'bitrate' => null,
-        'contentSize' => null,
-        'contentUrl' => null,
-        'duration' => null,
-        'embedUrl' => null,
-        'url' => null,
-        'height' => null,
-        'width' => null,
-        'uploadDate' => null,
         'caption' => null,
         'thumbnail' => ImageObject::class,
-        'description' => null,
-        'thumbnailUrl' => null,
-        'name' => null,
     ];
 }

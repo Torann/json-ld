@@ -3,9 +3,9 @@
 namespace JsonLd\ContextTypes;
 
 /**
- * https://schema.org/Corporation
+ * https://schema.org/SocialMediaPosting
  */
-class Corporation extends Organization
+class SocialMediaPosting extends Article
 {
     /**
      * Property structure
@@ -13,7 +13,6 @@ class Corporation extends Organization
      * @var array
      */
     protected $structure = [
-        'tickerSymbol' => null,
+        'sharedContent' => CreativeWork::class,
     ];
-
 }

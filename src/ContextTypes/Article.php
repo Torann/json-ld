@@ -19,7 +19,6 @@ class Article extends CreativeWork
         'pageStart' => null,
         'pagination' => null,
         'wordCount' => null,
-        'mainEntityOfPage' => WebPage::class,
     ];
 
     /**

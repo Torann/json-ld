@@ -36,6 +36,7 @@ class MediaObject extends CreativeWork
         'regionsAllowed' => Place::class,
         'requiresSubscription' => null,
         'startTime' => DateTime::class,
+        'thumbnailUrl' => null,
         'uploadDate' => DateTime::class,
         'width' => QuantitativeValue::class,
     ];

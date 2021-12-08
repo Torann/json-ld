@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Sculpture
+ */
 class Sculpture extends CreativeWork
 {
     /**

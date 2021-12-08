@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Place
+ */
 class Place extends Thing
 {
     /**
@@ -13,6 +16,7 @@ class Place extends Thing
         'address' => PostalAddress::class,
         'review' => Review::class,
         'aggregateRating' => AggregateRating::class,
+        'geo' => GeoCoordinates::class,
     ];
 
 }

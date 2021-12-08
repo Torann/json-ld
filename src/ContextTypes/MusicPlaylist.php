@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/MusicPlaylist
+ */
 class MusicPlaylist extends MusicAbstractContext
 {
     /**
