@@ -2,22 +2,15 @@
 
 namespace JsonLd\ContextTypes;
 
-class Beach extends AbstractContext
+/**
+ * https://schema.org/Beach
+ */
+class Beach extends CivicStructure
 {
     /**
      * Property structure
      *
      * @var array
      */
-    protected $structure = [
-        'name' => null,
-        'openingHours' => null,
-        'description' => null,
-        'image' => null,
-        'url' => null,
-        'address' => PostalAddress::class,
-        'geo' => GeoCoordinates::class,
-        'review' => Review::class,
-        'aggregateRating' => AggregateRating::class,
-    ];
+    protected $structure = [];
 }

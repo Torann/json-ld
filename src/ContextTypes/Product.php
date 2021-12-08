@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class Product extends AbstractContext
+/**
+ * https://schema.org/Product
+ */
+class Product extends Thing
 {
     /**
      * Property structure
@@ -10,16 +13,12 @@ class Product extends AbstractContext
      * @var array
      */
     protected $structure = [
-        'name' => null,
-        'description' => null,
         'brand' => null,
-        'image' => null,
         'sku' => null,
         'productID' => null,
-        'url' => null,
         'review' => Review::class,
         'aggregateRating' => AggregateRating::class,
-        'offers' => Offer::class,
+        'offers' => [Offer::class, AggregateOffer::class],
         'gtin8' => null,
         'gtin13' => null,
         'gtin14' => null,
@@ -32,29 +31,4 @@ class Product extends AbstractContext
         'weight' => QuantitativeValue::class,
     ];
 
-    /**
-     * Set isSimilarTo attributes.
-     *
-     * @param mixed $values
-     *
-     * @return mixed
-     */
-    protected function setIsSimilarToAttribute($values)
-    {
-        if (is_array($values)) {
-            foreach ($values as $key => $value) {
-                $product = new self($value);
-
-                $properties = $product->getProperties();
-
-                unset($properties['@context']);
-
-                $properties = array_filter($properties, 'strlen');
-
-                $values[$key] = $properties;
-            }
-        }
-
-        return $values;
-    }
 }

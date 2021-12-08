@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Offer
+ */
 class Offer extends Thing
 {
     /**
@@ -10,14 +13,10 @@ class Offer extends Thing
      * @var array
      */
     protected $structure = [
-        'name' => '',
         'itemOffered' => Product::class,
         'price' => null,
-        'lowPrice' => null,
-        'highPrice' => null,
         'priceCurrency' => null,
         'priceValidUntil' => null,
-        'url' => null,
         'itemCondition' => null,
         'availability' => null,
         'eligibleQuantity' => QuantitativeValue::class,
@@ -25,4 +24,5 @@ class Offer extends Thing
         'validFrom' => null,
         'seller' => Organization::class,
     ];
+
 }

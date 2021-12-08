@@ -3,9 +3,9 @@
 namespace JsonLd\ContextTypes;
 
 /**
- * https://schema.org/Comment
+ * https://schema.org/SocialMediaPosting
  */
-class Comment extends CreativeWork
+class SocialMediaPosting extends Article
 {
     /**
      * Property structure
@@ -13,8 +13,6 @@ class Comment extends CreativeWork
      * @var array
      */
     protected $structure = [
-        'downvoteCount' => null,
-        'upvoteCount' => null,
+        'sharedContent' => CreativeWork::class,
     ];
-
 }

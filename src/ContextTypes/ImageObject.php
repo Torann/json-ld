@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class ImageObject extends AbstractContext
+/**
+ * https://schema.org/ImageObject
+ */
+class ImageObject extends MediaObject
 {
     /**
      * Property structure
@@ -10,9 +13,6 @@ class ImageObject extends AbstractContext
      * @var array
      */
     protected $structure = [
-        'url' => null,
-        'height' => null,
-        'width' => null,
         'caption' => null,
         'thumbnail' => ImageObject::class,
     ];

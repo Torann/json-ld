@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Event
+ */
 class Event extends Thing
 {
     /**
@@ -9,47 +12,11 @@ class Event extends Thing
      *
      * @var array
      */
-    protected $extendedStructure = [
-        'name' => null,
+    protected $structure = [
         'startDate' => null,
         'endDate' => null,
-        'url' => null,
-        'offers' => [],
+        'offers' => Offer::class,
         'location' => Place::class,
     ];
 
-    /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
-
-    /**
-     * Set offers attributes.
-     *
-     * @param mixed $items
-     *
-     * @return array
-     */
-    protected function setOffersAttribute($items)
-    {
-        if (is_array($items) === false) {
-            return $items;
-        }
-
-        // Check if it is an array with one dimension
-        if (is_array(reset($items)) === false) {
-            return $this->getNestedContext(Offer::class, $items);
-        }
-
-        // Process multi dimensional array
-        return array_map(function ($item) {
-            return $this->getNestedContext(Offer::class, $item);
-        }, $items);
-    }
 }

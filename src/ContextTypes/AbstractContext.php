@@ -28,22 +28,8 @@ abstract class AbstractContext implements ContextTypeInterface
      * @var array
      */
     protected $structure = [
-        'name' => '',
+        'name' => null,
     ];
-
-    /**
-     * Property structure
-     *
-     * @var array
-     */
-    protected $extendStructure = [];
-
-    /**
-     * Property structure, will be merged up for objects extending Thing
-     *
-     * @var array
-     */
-    private $extendedStructure = [];
 
     /**
      * Create a new context type instance
@@ -55,6 +41,11 @@ abstract class AbstractContext implements ContextTypeInterface
         // Set type
         $path = explode('\\', get_class($this));
         $this->type = end($path);
+
+        $class = get_called_class();
+        while ($class = get_parent_class($class)) {
+            $this->structure += get_class_vars($class)['structure'];
+        }
 
         // Set attributes
         $this->fill($attributes);
@@ -89,12 +80,12 @@ abstract class AbstractContext implements ContextTypeInterface
             '@context' => 'http://schema.org',
             '@type' => $this->type,
             'sameAs' => null
-        ], $this->structure, $this->extendStructure);
+        ], $this->structure);
 
         // Set properties from attributes
         foreach ($properties as $key => $property) {
-            $this->setProperty(
-                $key, $property, $this->getArrValue($attributes, $key, '')
+            $this->properties[$key] = $this->makeProperty(
+                $key, $property, $this->getArrValue($attributes, $key,'')
             );
         }
 
@@ -148,41 +139,50 @@ abstract class AbstractContext implements ContextTypeInterface
      *
      * @return mixed
      */
-    protected function setProperty(string $key, $property, $value = null)
+    protected function makeProperty(string $key, $property, $value = null)
     {
         // Can't be changed
         if ($key[0] === '@') {
-            return $this->properties[$key] = $property;
+            return $property;
         }
 
         // If the attribute has a get mutator, we will call that
         // then return what it returns as the value.
         if ($this->hasGetMutator($key)) {
-            return $this->properties[$key] = $this->mutateAttribute($key, $value);
+            return $this->mutateAttribute($key, $value);
         }
 
         // Format date and time to UTC
         if ($value instanceof DateTime) {
-            return $this->properties[$key] = $value->format('Y-m-d\TH:i:s');
+            return $value->format('Y-m-d\TH:i:s');
         }
 
         // Set nested context
         if ($value instanceof Context) {
-            return $this->properties[$key] = $this->filterNestedContext($value->getProperties());
+            return $this->filterNestedContext($value->getProperties());
+        }
+
+        if (is_array($value) && $this->hasValidContext($value, $property)) {
+            return $this->makeContext($value);
         }
 
         // Set nested context from class
-        if ($property && class_exists($property)) {
-            return $this->properties[$key] = $this->getNestedContext($property, $value);
-        }
+        if (is_array($value) && is_string($property) && class_exists($property)) {
+            // Check if it is an array with one dimension
+            if (is_array(reset($value)) === false) {
+                $nested_context = $this->getNestedContext($property, $value);
+            } else {
+                // Process multi dimensional array
+                $nested_context = array_map(function ($item) use ($property) {
+                    return $this->getNestedContext($property, $item);
+                }, $value);
+            }
 
-        // Map properties to object
-        if ($property !== null && is_array($property) && is_array($value)) {
-            return $this->properties[$key] = $this->mapProperty($property, $value);
+            return $nested_context;
         }
 
         // Set value
-        return $this->properties[$key] = $value;
+        return $value;
     }
 
     /**
@@ -342,5 +342,35 @@ abstract class AbstractContext implements ContextTypeInterface
         return isset($array[$key])
             ? $array[$key]
             : $default;
+    }
+
+    /**
+     * Check if the values array has a key '@type' and if that contains an existing context
+     *
+     * @param array $value
+     * @param string|array $property
+     *
+     * @retrun bool
+     */
+    protected function hasValidContext(array $value, $property)
+    {
+        if (array_key_exists('@type', $value)) {
+            $class_name = __NAMESPACE__ .'\\'. $value['@type'];
+
+            if (!is_array($property)) {
+                $property = [$property];
+            }
+
+            return (in_array($class_name, $property) && class_exists($class_name));
+        }
+
+        return false;
+    }
+
+    protected function makeContext(array $value)
+    {
+        $property = __NAMESPACE__ .'\\'. $value['@type'];
+
+        return $this->getNestedContext($property, $value);
     }
 }

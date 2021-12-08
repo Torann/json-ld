@@ -38,12 +38,29 @@ class WebSiteTest extends TestCase
     {
         $context = $this->make();
 
-        $attributesPlus = $this->attributes;
-        $attributesPlus['@context'] = 'http://schema.org';
-        $attributesPlus["@type"] = 'WebSite';
+        $attributesPlus = array_merge([
+            '@context' => 'http://schema.org',
+            '@type' => 'WebSite',
+            'aggregateRating'    => '',
+            'alternativeHeadline' => '',
+            'author' => '',
+            'comment' => '',
+            'commentCount' => '',
+            'creator' => '',
+            'learningResourceType' => '',
+            'mainEntity' => '',
+            'review' => '',
+            'text' => '',
+            'thumbnailUrl' => '',
+            'video' => '',
+            'alternateName' => '',
+            'description' => '',
+            'mainEntityOfPage' => '',
+        ], $this->attributes);
+
         $attributesPlus["publisher"]["@type"] = 'Organization';
 
-        $this->assertEquals($context->getProperties(), $attributesPlus);
+        $this->assertEquals($attributesPlus, $context->getProperties());
     }
 
     /**

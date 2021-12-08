@@ -2,14 +2,15 @@
 
 namespace JsonLd\ContextTypes;
 
-class BlogPosting extends Article
+/**
+ * https://schema.org/BlogPosting
+ */
+class BlogPosting extends SocialMediaPosting
 {
     /**
      * Property structure
      *
      * @var array
      */
-    protected $extendStructure = [
-        'sharedContent' => CreativeWork::class,
-    ];
+    protected $structure = [];
 }

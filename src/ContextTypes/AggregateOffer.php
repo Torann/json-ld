@@ -2,10 +2,7 @@
 
 namespace JsonLd\ContextTypes;
 
-/**
- * https://schema.org/Comment
- */
-class Comment extends CreativeWork
+class AggregateOffer extends Offer
 {
     /**
      * Property structure
@@ -13,8 +10,9 @@ class Comment extends CreativeWork
      * @var array
      */
     protected $structure = [
-        'downvoteCount' => null,
-        'upvoteCount' => null,
+        'highPrice' => null,
+        'lowPrice' => null,
+        'offerCount' => null,
     ];
 
 }

@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class PostalAddress extends AbstractContext
+/**
+ * https://schema.org/PostalAddress
+ */
+class PostalAddress extends ContactPoint
 {
     /**
      * Property structure

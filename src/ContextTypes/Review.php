@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class Review extends AbstractContext
+/**
+ * https://schema.org/Review
+ */
+class Review extends CreativeWork
 {
     /**
      * Property structure
@@ -12,12 +15,7 @@ class Review extends AbstractContext
     protected $structure = [
         'itemReviewed' => Thing::class,
         'reviewRating' => Rating::class,
-        'aggregateRating' => AggregateRating::class,
-        'name' => null,
-        'author' => Person::class,
         'reviewBody' => null,
-        'publisher' => Organization::class,
-        'duration' => Duration::class,
-        'datePublished' => null,
+        'duration' => Duration::class, //Not an official attribute
     ];
 }

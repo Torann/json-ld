@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/MusicAlbum
+ */
 class MusicAlbum extends MusicAbstractContext
 {
     /**
@@ -10,14 +13,11 @@ class MusicAlbum extends MusicAbstractContext
      * @var array
      */
     protected $structure = [
-        '@id' => null,
-        'url' => null,
-        'name' => null,
         'description' => null,
         'numTracks' => null,
-        'byArtist' => null,
+        'byArtist' => MusicGroup::class,
         'genre' => null,
-        'track' => null,
-        'image' => null,
+        'track' => MusicRecording::class,
+        'image' => ImageObject::class,
     ];
 }

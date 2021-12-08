@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * Not an offical context according to schema.org
+ */
 class SearchBox extends AbstractContext
 {
     /**

@@ -12,7 +12,7 @@ class CreativeWork extends Thing
      *
      * @var array
      */
-    private $extendedStructure = [
+    protected $structure = [
         'about' => Thing::class,
         'aggregateRating' => AggregateRating::class,
         'alternativeHeadline' => null,
@@ -36,17 +36,6 @@ class CreativeWork extends Thing
     ];
 
     /**
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
-
-    /**
      * Set the article body attribute.
      *
      * @param string $text
@@ -58,57 +47,4 @@ class CreativeWork extends Thing
         return $this->truncate($text, 260);
     }
 
-    /**
-     * Set the authors
-     *
-     * @param mixed $items
-     *
-     * @return array
-     */
-    protected function setAuthorAttribute($items)
-    {
-        if (is_array($items) === false) {
-            return $items;
-        }
-
-        return array_map(function ($item) {
-            return $this->getNestedContext(Person::class, $item);
-        }, $items);
-    }
-
-    /**
-     * Set the comments
-     *
-     * @param mixed $items
-     *
-     * @return array
-     */
-    protected function setCommentAttribute($items)
-    {
-        if (is_array($items) === false) {
-            return $items;
-        }
-
-        return array_map(function ($item) {
-            return $this->getNestedContext(Comment::class, $item);
-        }, $items);
-    }
-
-    /**
-     * Set the reviews
-     *
-     * @param mixed $items
-     *
-     * @return array
-     */
-    protected function setReviewAttribute($items)
-    {
-        if (is_array($items) === false) {
-            return $items;
-        }
-
-        return array_map(function ($item) {
-            return $this->getNestedContext(Review::class, $item);
-        }, $items);
-    }
 }

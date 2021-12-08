@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class AggregateRating extends AbstractContext
+/**
+ * https://schema.org/AggregateRating
+ */
+class AggregateRating extends Rating
 {
     /**
      * Property structure
@@ -11,9 +14,6 @@ class AggregateRating extends AbstractContext
      */
     protected $structure = [
         'reviewCount' => null,
-        'ratingValue' => null,
-        'bestRating' => null,
-        'worstRating' => null,
         'ratingCount' => null,
         'itemReviewed' => Thing::class,
     ];

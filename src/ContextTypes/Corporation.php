@@ -2,6 +2,9 @@
 
 namespace JsonLd\ContextTypes;
 
+/**
+ * https://schema.org/Corporation
+ */
 class Corporation extends Organization
 {
     /**
@@ -9,20 +12,8 @@ class Corporation extends Organization
      *
      * @var array
      */
-    private $extendedStructure = [
+    protected $structure = [
         'tickerSymbol' => null,
     ];
 
-    /**
-     * Corporation constructor. Merges extendedStructure up
-     *
-     * @param array $attributes
-     * @param array $extendedStructure
-     */
-    public function __construct(array $attributes, array $extendedStructure = [])
-    {
-        parent::__construct(
-            $attributes, array_merge($this->structure, $this->extendedStructure, $extendedStructure)
-        );
-    }
 }

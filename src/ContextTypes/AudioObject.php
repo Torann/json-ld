@@ -3,9 +3,9 @@
 namespace JsonLd\ContextTypes;
 
 /**
- * https://schema.org/Comment
+ * https://schema.org/AudioObject
  */
-class Comment extends CreativeWork
+class AudioObject extends MediaObject
 {
     /**
      * Property structure
@@ -13,8 +13,8 @@ class Comment extends CreativeWork
      * @var array
      */
     protected $structure = [
-        'downvoteCount' => null,
-        'upvoteCount' => null,
+        'caption' => MediaObject::class,
+        'transcript' => null,
     ];
 
 }

@@ -3,9 +3,9 @@
 namespace JsonLd\ContextTypes;
 
 /**
- * https://schema.org/Comment
+ * https://schema.org/CivicStructure
  */
-class Comment extends CreativeWork
+class CivicStructure extends Place
 {
     /**
      * Property structure
@@ -13,8 +13,6 @@ class Comment extends CreativeWork
      * @var array
      */
     protected $structure = [
-        'downvoteCount' => null,
-        'upvoteCount' => null,
+        'openingHours' => null,
     ];
-
 }

@@ -2,7 +2,10 @@
 
 namespace JsonLd\ContextTypes;
 
-class Rating extends AbstractContext
+/**
+ * https://schema.org/Rating
+ */
+class Rating extends Thing
 {
     /**
      * Property structure
